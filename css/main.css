@@ -1,0 +1,44 @@
+
+body {
+    margin: 0;
+}
+
+.header-components {
+    width: 100%;
+    background-color: forestgreen;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-components-user-identity {
+    height: 100px;
+    display: flex;
+}
+
+#searchbar {
+    margin: 20px 0;
+    padding: 20px 10px;
+    width: 500px;
+    border-radius: 5px;
+    border: 1px solid forestgreen;
+    font-size: 20px;
+}
+
+/* temporaire pas définitif */
+.logo_leroy_merlin_container {
+    margin: 20px 20px;
+}
+
+.logo_leroy_merlin {
+    width: 90px;
+}
+/**/
+
+#logo_leroy_merlin_container {
+    margin: 20px 20px;
+}
+
+#logo_leroy_merlin {
+    width: 90px;
+}
