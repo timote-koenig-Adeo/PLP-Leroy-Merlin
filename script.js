@@ -1,25 +1,29 @@
 const searchbar = document.getElementById('searchbar');
 
-const on_search = () => {
+const onSearch = () => {
     document.getElementById('searchbar_container').style.backgroundColor = 'rgba(255,255,255,100%)';
     document.getElementById('overlay').style.display = "flex";
-    document.getElementById('history_elements_container').style.display = "flex";
+    document.getElementById('history_list').style.display = "flex";
+    document.getElementById('history_list').style.zIndex = "4";
+    document.querySelector('.history_link').style.zIndex = '4';
 };
 
-const off_search = () => {
+const offSearch = () => {
     document.getElementById('searchbar_container').style.backgroundColor = 'rgba(255,255,255,0%)';
     document.getElementById('overlay').style.display = "none";
-    document.getElementById('history_elements_container').style.display = "none";
+    document.getElementById('history_list').style.display = "none";
+    document.getElementById('history_list').style.zIndex = "-1";
+    document.querySelector('.history_link').style.zIndex = '-1';
 };
 
 document.addEventListener('click', function(event) {
     if (event.target === searchbar) {
-        on_search();
+        onSearch();
     }
 });
 
 document.addEventListener('click', function(event) {
     if (event.target !== searchbar) {
-        off_search()
+        offSearch()
     }
 });
