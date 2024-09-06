@@ -5,29 +5,42 @@
         <title>PLP Leroy Merlin</title>
         <link href="css/main.css" rel="stylesheet">
     </head>
-    <div id="overlay">
-        <div id="history">
-
-        </div>
-    </div>
+    <div id="overlay"></div>
     <header>
         <div class="header-components">
-            <a id="logo_leroy_merlin_container" href="https://www.leroymerlin.fr/"><img id="logo_leroy_merlin" src="img/Leroy-Merlin-Logo.png" alt="logo leroy merlin"></a>
-            <input id="searchbar" type="search" placeholder="Que cherchez vous?" value="">
-            <div class="header-components-user-identity">
-                <a class="logo_leroy_merlin_container" href="https://www.leroymerlin.fr/"><img class="logo_leroy_merlin" src="" alt="nothing"></a>
-                <a class="logo_leroy_merlin_container" href="https://www.leroymerlin.fr/"><img class="logo_leroy_merlin" src="" alt="nothing"></a>
-                <a class="logo_leroy_merlin_container" href="https://www.leroymerlin.fr/"><img class="logo_leroy_merlin" src="" alt="nothing"></a>
+            <a class="header_logo_container" href="https://www.leroymerlin.fr/" target="_blank">
+                <img id="logo_leroy_merlin" src="img/Leroy-Merlin-Logo.png" alt="logo leroy merlin">
+            </a>
+            <div id="search_container">
+                <div id="searchbar_container">
+                    <input id="searchbar" type="search" placeholder="Que cherchez vous?" value="">
+                </div>
+                <ul id="history_elements_container">
+                    <li class="history_element">
+                        <button class="history_button">
+                            <img src="img/clock-rotate-left-solid.svg" alt="historique" height="20px">
+                            1
+                        </button>
+                    </li>
+                    <li class="history_element">
+                        <button class="history_button">
+                            <img src="img/clock-rotate-left-solid.svg" alt="historique" height="20px">
+                            1
+                        </button>
+                    </li>
+                </ul>
             </div>
+            <a class="header_logo_container" href="https://www.leroymerlin.fr/" target="_blank">
+                <img id="user_logo" src="./img/user.svg" alt="user logo">
+            </a>
         </div>
         <div class="header-navigation">
         </div>
     </header>
     <body>
-
     </body>
     <footer>
 
     </footer>
-    <script src="scipt.js"></script>
+    <script src="./script.js"></script>
 </html>
