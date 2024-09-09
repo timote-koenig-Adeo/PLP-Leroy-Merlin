@@ -83,7 +83,6 @@ a {
     z-index: 0;
     width: 100%;
     margin: 0;
-    font-size: 20px;
     display: flex;
     justify-content: left;
 }
@@ -97,8 +96,12 @@ a {
     margin: 0;
     padding: 2% 5%;
     width: 95%;
+    display: flex;
+}
+
+.history_input {
     font-size: 20px;
-    text-align: left;
+    padding: 0 5px;
 }
 
 .history_link:hover {
