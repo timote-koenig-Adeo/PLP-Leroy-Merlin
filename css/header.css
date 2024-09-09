@@ -29,9 +29,51 @@ a {
     height: auto;
 }
 
+#logo_container {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.logo_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo_picture {
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 1500px) {
+    .logo_text {
+        display: none;
+    }
+}
+
+#help_logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
 #user_logo {
-    width: 50px;
-    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+#shop_logo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
 }
 
 #overlay {
