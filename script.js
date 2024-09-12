@@ -14,13 +14,13 @@ const offSearch = () => {
     document.querySelector('.history-link').style.zIndex = '-1';
 };
 
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
     if (event.target === searchbar) {
         onSearch();
     }
 });
 
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
     if (event.target !== searchbar) {
         offSearch()
     }
@@ -41,7 +41,7 @@ const appendHistory = (input, historyList) => {
     historyIcon.height = 20;
 
     let historyInput = document.createElement('div');
-    historyInput.textContent  = input;
+    historyInput.textContent = input;
     historyInput.classList.add('history-input');
 
     historyLink.appendChild(historyIcon);
@@ -56,7 +56,7 @@ const inputIsOkay = (input) => {
     return input !== ""
 }
 
-document.getElementById('searchbar').addEventListener('keypress', function(event) {
+document.getElementById('searchbar').addEventListener('keypress', function (event) {
     const historyList = document.getElementById('history-list');
     let input = document.getElementById('searchbar').value;
 
@@ -79,28 +79,38 @@ navigationItems.forEach(item => {
 
     let isMenuHovered = false;
     let isItemHovered = false;
+    let openMenuTimeout;
+    let closeMenuTimeout;
 
+    // Ajout d'un délai pour le mouseover
     item.addEventListener('mouseover', () => {
-        menu.classList.add('burger-menu-open');
-        isItemHovered = true;
+        clearTimeout(closeMenuTimeout); // Annuler la fermeture en cas de survol rapide
+
+        openMenuTimeout = setTimeout(() => {
+            menu.classList.add('burger-menu-open');
+            isItemHovered = true;
+        }, 300); // Délai de 300ms (modifiable selon besoin)
     });
 
     item.addEventListener('mouseout', () => {
+        clearTimeout(openMenuTimeout); // Annuler l'ouverture si on sort rapidement
+
         isItemHovered = false;
-        setTimeout(() => {
+        closeMenuTimeout = setTimeout(() => {
             closeMenuIfNeeded();
-        }, 0);
+        }, 300); // Délai avant de fermer (modifiable)
     });
 
     menu.addEventListener('mouseover', () => {
+        clearTimeout(closeMenuTimeout); // Empêcher la fermeture si on survole le menu
         isMenuHovered = true;
     });
 
     menu.addEventListener('mouseout', () => {
         isMenuHovered = false;
-        setTimeout(() => {
+        closeMenuTimeout = setTimeout(() => {
             closeMenuIfNeeded();
-        }, 0);
+        }, 300); // Délai avant de fermer (modifiable)
     });
 
     function closeMenuIfNeeded() {
@@ -109,4 +119,44 @@ navigationItems.forEach(item => {
         }
     }
 });
+
+
+
+const categoriesElements = document.querySelectorAll('.categories-list li');
+
+categoriesElements.forEach(element => {
+
+    const menuId = element.dataset.menuId;
+    const menu = document.getElementById(menuId);
+    let timeoutId; // Stocke l'ID du timeout pour pouvoir l'annuler si besoin
+
+    element.addEventListener('mouseover', () => {
+        // Annule le timeout précédent pour éviter des conflits
+        if (timeoutId) {
+            clearTimeout(timeoutId);
+        }
+
+        // Délai avant d'ajouter la classe
+        timeoutId = setTimeout(() => {
+            // Enlever la classe "categorie-navigation-on" de tous les autres menus
+            categoriesElements.forEach(el => {
+                const otherMenuId = el.dataset.menuId;
+                const otherMenu = document.getElementById(otherMenuId);
+
+                otherMenu.classList.remove('categorie-navigation-on');
+            });
+
+                menu.classList.add('categorie-navigation-on');
+        }, 500);
+    });
+
+    // Annuler le timeout si on sort de l'élément avant que le délai soit écoulé
+    element.addEventListener('mouseout', () => {
+        clearTimeout(timeoutId);
+    });
+});
+
+
+
+
 
