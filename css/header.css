@@ -24,6 +24,12 @@ header {
     width: 100%;
 }
 
+.header-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .header-components {
     width: 100%;
     background-color: forestgreen;
@@ -32,8 +38,34 @@ header {
     justify-content: space-between;
 }
 
+.top-left-header {
+    display: flex;
+}
+
+.header-our-shop {
+    margin: auto 0;
+    height: 50px;
+    background-color: forestgreen;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.header-our-shop:hover {
+    background-color: rgba(0,0,0,25%);
+}
+
+.header-our-shop-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 2px;
+}
+
 .header-logo-container {
-    margin: 20px 30px;
+    margin: auto 30px;
 }
 
 #logo-leroy-merlin {
@@ -60,6 +92,10 @@ header {
 
 @media (max-width: 1500px) {
     .logo-text {
+        display: none;
+    }
+
+    .header-our-shop-content:last-of-type {
         display: none;
     }
 }

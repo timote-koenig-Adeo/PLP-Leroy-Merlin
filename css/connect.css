@@ -1,0 +1,101 @@
+.connection-global-page {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 700px;
+    margin: auto 0;
+}
+
+.connection-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 25%;
+}
+
+.connection-title {
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+}
+
+.connection-instruction {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    margin: 0 0 10px 0;
+}
+
+.connection-instruction-first-line {
+    color: forestgreen;
+    margin: 0 0 20px 0;
+}
+
+.connection-instruction-second-line {
+    display: flex;
+    justify-content: left;
+    font-size: medium;
+}
+
+.connection-instruction-second-line-spe {
+    font-size: small;
+    color: rgba(0, 0, 0, 50%);
+    margin: 0 0 0 5px;
+}
+
+.connection-new-user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.connection-new-user input {
+    border: 1px solid black !important;
+}
+
+.connection-new-user input,
+.connection-new-user button{
+    border-radius: 5px;
+    border: 0;
+    padding: 15px;
+    font-size: large;
+    margin: 0 0 30px 0;
+}
+
+.connection-separator {
+    display: flex;
+    justify-content: center;
+    margin: 0 0 30px 0;
+}
+
+.connection-old-user {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.connection-old-user button {
+    display: flex;
+    justify-content: center;
+    border-radius: 5px;
+    border: 0;
+    padding: 15px;
+    font-size: large;
+    margin: 0 0 30px 0;
+}
+
+.facebook-button {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.google-button {
+    border: 1px solid rgba(0,0,0,25%) !important;
+    background-color: white;
+
+}
+
+.apple-button {
+    background-color: black;
+    color: white;
+}

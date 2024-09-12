@@ -79,6 +79,7 @@ navigationItems.forEach(item => {
 
     let isMenuHovered = false;
     let isItemHovered = false;
+    const timeoutValue = 300;
     let openMenuTimeout;
     let closeMenuTimeout;
 
@@ -89,7 +90,7 @@ navigationItems.forEach(item => {
         openMenuTimeout = setTimeout(() => {
             menu.classList.add('burger-menu-open');
             isItemHovered = true;
-        }, 300); // Délai de 300ms (modifiable selon besoin)
+        }, timeoutValue);
     });
 
     item.addEventListener('mouseout', () => {
@@ -98,7 +99,7 @@ navigationItems.forEach(item => {
         isItemHovered = false;
         closeMenuTimeout = setTimeout(() => {
             closeMenuIfNeeded();
-        }, 300); // Délai avant de fermer (modifiable)
+        }, timeoutValue);
     });
 
     menu.addEventListener('mouseover', () => {
@@ -110,7 +111,7 @@ navigationItems.forEach(item => {
         isMenuHovered = false;
         closeMenuTimeout = setTimeout(() => {
             closeMenuIfNeeded();
-        }, 300); // Délai avant de fermer (modifiable)
+        }, timeoutValue);
     });
 
     function closeMenuIfNeeded() {
