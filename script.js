@@ -18,9 +18,6 @@ document.addEventListener('click', function (event) {
     if (event.target === searchbar) {
         onSearch();
     }
-});
-
-document.addEventListener('click', function (event) {
     if (event.target !== searchbar) {
         offSearch()
     }
@@ -158,6 +155,21 @@ categoriesElements.forEach(element => {
 });
 
 
+// function to show and hide hour drawer
 
+const hourDrawer = document.querySelector(".hour-drawer-page")
+const areaOfHourDrawer = document.querySelector(".hour-drawer-container")
 
+const toggleDisplayHourDrawer = () => {
+    hourDrawer.classList.toggle("hour-drawer-display-on")
+    event.stopPropagation();
+}
 
+document.addEventListener('click', function (event) {
+
+    const isDisplayed = window.getComputedStyle(hourDrawer).display !== 'none';
+
+    if (isDisplayed && !areaOfHourDrawer.contains(event.target)) {
+        hourDrawer.classList.remove("hour-drawer-display-on")
+    }
+});

@@ -4,18 +4,78 @@
     <meta charset="UTF-8">
     <title>PLP Leroy Merlin</title>
     <link href="css/header.css" rel="stylesheet">
+    <link href="css/hour-drawer.css" rel="stylesheet">
     <link href="css/connect.css" rel="stylesheet">
 </head>
 <body>
 <header>
     <div class="header-global">
+        <div class="hour-drawer-page">
+            <div class="hour-drawer-container">
+                <div class="hour-drawer-content">
+                    <div class="hour-drawer-header">
+                        <div class="hour-drawer-header-text">
+                            Mon Magasin
+                        </div>
+                        <button onclick="toggleDisplayHourDrawer()">
+                            X
+                        </button>
+                    </div>
+                    <div class="hour-drawer-body">
+                        <div class="hour-drawer-body-content">
+                            <div>
+                                <h2>Villeneuve-d'Ascq - Lille</h2>
+                            </div>
+                            <div>
+                                <p>
+                                    Rue de Versailles<br>
+                                    Z.A.C de Valmy<br>
+                                    59650 Villeneuve d'Ascq
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    Tèl:
+                                    <a href="https://www.leroymerlin.fr">
+                                        +33 3 20 43 88 88
+                                    </a>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <strong>
+                                        Horaires magasin
+                                    </strong><br>
+                                    Lun-Sam: 09:00 - 20:00<br>
+                                    Dimanche:09:00 - 18:00
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <strong>
+                                        Horaires cour matériaux
+                                    </strong><br>
+                                    Lun-Sam: 07:00 - 20:00<br>
+                                    Dimanche:09:00 - 18:00
+                                </p>
+                            </div>
+                            <div>
+                                <a href="https://www.leroymerlin.fr/magasins/villeneuve-d-ascq-lille.html">
+                                    En savoir plus sur le magasin
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="header-container">
             <div class="header-components">
                 <div class="top-left-header">
                     <a class="header-logo-container" href="index.html">
                         <img id="logo-leroy-merlin" src="img/Leroy-Merlin-Logo.png" alt="logo leroy merlin">
                     </a>
-                    <button class="header-our-shop" onclick="">
+                    <button class="header-our-shop" onclick="toggleDisplayHourDrawer()">
                         <section class="header-our-shop-content">
                             <img src="img/shop-solid.svg" width="30px">
                         </section>
@@ -94,7 +154,7 @@
                     <div id="terasse" class="terasse-navigation categorie-navigation-on">
                         <div class="categories-name">
                             <h1>Terasse et Jardin</h1>
-                            <a>voir tout</a>
+                            <a href="https://www.leroymerlin.fr/produits/terrasse-jardin/">voir tout</a>
                         </div>
                         <div class="navigation-filter">
                             <div class="navigation-specific-filter">
@@ -131,7 +191,7 @@
                     <div id="outillage" class="outillage-navigation">
                         <div class="categories-name">
                             <h1>Outillage</h1>
-                            <a>voir tout</a>
+                            <a href="https://www.leroymerlin.fr/produits/outillage/">voir tout</a>
                         </div>
                         <div class="navigation-filter">
                             <div class="navigation-specific-filter">
@@ -298,8 +358,15 @@
             <h1>Bienvenue</h1>
         </div>
         <div class="connection-instruction">
-            <div class="connection-instruction-first-line">Créez votre compte ou connectez-vous:</div>
-            <div class="connection-instruction-second-line">Saisissez votre adresse email  <div class="connection-instruction-second-line-spe">- obligatoire</div></div>
+            <div class="connection-instruction-first-line">
+                Créez votre compte ou connectez-vous:
+            </div>
+            <div class="connection-instruction-second-line">
+                Saisissez votre adresse email
+                <div class="connection-instruction-second-line-spe">
+                    - obligatoire
+                </div>
+            </div>
         </div>
         <div class="connection-new-user">
             <input type="email">
@@ -309,9 +376,24 @@
             <div>Ou continuer avec</div>
         </div>
         <div class="connection-old-user">
-            <button class="facebook-button"><img src="img/facebook.png" width="30px"><section class="login-button-content">Se connecter sur Facebook</section></button>
-            <button class="google-button"><img src="img/google.png" width="30px"><section class="login-button-content">Se connecter sur Google</section></button>
-            <button class="apple-button"><img src="img/apple.png" width="30px"><section class="login-button-content">Se connecter sur Apple</section></button>
+            <button class="facebook-button">
+                <img src="img/facebook.png" width="30px">
+                <section class="login-button-content">
+                    Se connecter sur Facebook
+                </section>
+            </button>
+            <button class="google-button">
+                <img src="img/google.png" width="30px">
+                <section class="login-button-content">
+                    Se connecter sur Google
+                </section>
+            </button>
+            <button class="apple-button">
+                <img src="img/apple.png" width="30px">
+                <section class="login-button-content">
+                    Se connecter sur Apple
+                </section>
+            </button>
         </div>
     </div>
 </main>

@@ -1,0 +1,66 @@
+.hour-drawer-page {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: none;
+    justify-content: right;
+    z-index: 50;
+}
+
+.hour-drawer-display-on {
+    display: flex !important;
+}
+
+.hour-drawer-container {
+    box-shadow: 0 0 0 99999px rgba(0,0,0,50%);
+    background-color: white;
+    width: 25rem;
+    height: 1000rem;
+}
+
+.hour-drawer-body {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: large;
+}
+
+.hour-drawer-body-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hour-drawer-header {
+    border-bottom: 1px solid rgba(0,0,0,25%);
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 2rem;
+}
+
+.hour-drawer-header button{
+    height: 40px;
+    width: 40px;
+    background-color: rgba(0,0,0,0%);
+    border: 1px solid rgba(125,125,125,50%);
+    border-radius: 10px;
+}
+
+.hour-drawer-header button:hover{
+    border: 4px solid forestgreen;
+}
+
+.hour-drawer-header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 60%;
+}
+
+.hour-drawer-body-content a {
+    text-decoration: underline;
+}
+
+.hour-drawer-body-content a:hover {
+    color: #0b96cc;
+}

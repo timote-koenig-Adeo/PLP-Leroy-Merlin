@@ -312,6 +312,10 @@ header {
     text-decoration: underline;
 }
 
+.categories-name a:hover {
+    color: #0b96cc;
+}
+
 .navigation-filter {
     display: flex;
     justify-content: space-around;
