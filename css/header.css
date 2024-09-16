@@ -49,7 +49,8 @@ header {
     border: 0;
     display: flex;
     justify-content: center;
-    border-radius: 15px;
+    align-items: center;
+    border-radius: 16px;
 }
 
 .header-our-shop:hover {
@@ -144,7 +145,7 @@ header {
     margin: 20px 0;
     padding: 18px 10px;
     width: 95%;
-    border-radius: 5px;
+    border-radius: 8px;
     border: 1px solid forestgreen;
     font-size: 20px;
     z-index: 30;
