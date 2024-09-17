@@ -215,3 +215,24 @@ function checkNoActiveFilters() {
         });
     }
 }
+
+// function to display filter drawer
+
+const drawer = document.querySelector(".filter-drawer")
+const overlay = document.querySelector("body")
+
+const displayFilterDrawer = (button) => {
+    drawer.classList.toggle("filter-drawer-visible")
+    overlay.classList.toggle("overlay-visible")
+    event.stopPropagation();
+}
+
+document.addEventListener('click', function (event) {
+
+    const isDisplayed = window.getComputedStyle(drawer).display !== 'none';
+
+    if (isDisplayed && !drawer.contains(event.target)) {
+        drawer.classList.remove("filter-drawer-visible")
+        overlay.classList.remove("overlay-visible")
+    }
+});

@@ -350,6 +350,9 @@
 </header>
 <main>
     <div id="content">
+        <div class="filter-drawer">
+
+        </div>
         <ul class="global-filter-list">
             <li>
                 <button id="sell-by-leroy-merlin" class="filter-button" onclick="toggleFilter(`sell-by-leroy-merlin`, this)">
@@ -364,6 +367,28 @@
             <li>
                 <button id="withdrawal" class="filter-button" onclick="toggleFilter(`withdrawal`, this)">
                     Retrait en 2H
+                </button>
+            </li>
+        </ul>
+        <ul class="specific-filter-list">
+            <li>
+                <button id="Tension" class="filter-button" onclick="displayFilterDrawer(this)">
+                    Tension
+                </button>
+            </li>
+            <li>
+                <button id="mark" class="filter-button" onclick="displayFilterDrawer(this)">
+                    Marque
+                </button>
+            </li>
+            <li>
+                <button id="price" class="filter-button" onclick="displayFilterDrawer(this)">
+                    Prix
+                </button>
+            </li>
+            <li>
+                <button id="type" class="filter-button" onclick="displayFilterDrawer(this)">
+                    Type
                 </button>
             </li>
         </ul>
@@ -490,6 +515,34 @@
                             Qui a une petite description.
                         </div>
                         <div class="price">
+                            <strong>200€</strong>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="product-card sell-by-leroy-merlin">
+                <a class="tile" href="perceuse.html">
+                    <img class="product-card-picture" src="img/product/perceuse-pack.png" alt="perceuse">
+                    <div class="container">
+                        <div class="text">
+                            Ceci est un produit.<br>
+                            Qui a une petite description.
+                        </div>
+                        <div class="price">
+                            <strong>200€</strong>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="product-card">
+                <a class="tile" href="perceuse.html">
+                    <img class="product-card-picture" src="img/product/perceuse.png" alt="perceuse">
+                    <div class="container">
+                        <div class="text">
+                            Ceci est un produit.<br>
+                            Qui a une petite description.
+                        </div>
+                        <div class="price">
                             <strong>20€</strong>
                         </div>
                     </div>
@@ -504,7 +557,21 @@
                             Qui a une petite description.
                         </div>
                         <div class="price">
-                            <strong>20€</strong>
+                            <strong>200€</strong>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="product-card sell-by-leroy-merlin">
+                <a class="tile" href="perceuse.html">
+                    <img class="product-card-picture" src="img/product/perceuse-pack.png" alt="perceuse">
+                    <div class="container">
+                        <div class="text">
+                            Ceci est un produit.<br>
+                            Qui a une petite description.
+                        </div>
+                        <div class="price">
+                            <strong>200€</strong>
                         </div>
                     </div>
                 </a>
