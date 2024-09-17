@@ -350,8 +350,25 @@
 </header>
 <main>
     <div id="content">
+        <ul class="global-filter-list">
+            <li>
+                <button id="sell-by-leroy-merlin" class="filter-button" onclick="toggleFilter(`sell-by-leroy-merlin`, this)">
+                    Vendu par Leroy Merlin
+                </button>
+            </li>
+            <li>
+                <button id="in-stock" class="filter-button" onclick="toggleFilter(`in-stock`, this)">
+                    En rayon dans mon magasin
+                </button>
+            </li>
+            <li>
+                <button id="withdrawal" class="filter-button" onclick="toggleFilter(`withdrawal`, this)">
+                    Retrait en 2H
+                </button>
+            </li>
+        </ul>
         <ul class="product-list">
-            <li class="product-card">
+            <li class="product-card withdrawal in-stock">
                 <a class="tile" href="perceuse.html">
                     <img class="product-card-picture" src="img/product/perceuse.png" alt="perceuse">
                     <div class="container">
@@ -379,7 +396,7 @@
                     </div>
                 </a>
             </li>
-            <li class="product-card">
+            <li class="product-card withdrawal">
                 <a class="tile" href="perceuse.html">
                     <img class="product-card-picture" src="img/product/perceuse.png" alt="perceuse">
                     <div class="container">
@@ -393,7 +410,7 @@
                     </div>
                 </a>
             </li>
-            <li class="product-card">
+            <li class="product-card in-stock">
                 <a class="tile" href="perceuse.html">
                     <img class="product-card-picture" src="img/product/perceuse.png" alt="perceuse">
                     <div class="container">
@@ -464,9 +481,9 @@
                 </a>
             </li>
 
-            <li class="product-card">
+            <li class="product-card sell-by-leroy-merlin">
                 <a class="tile" href="perceuse.html">
-                    <img class="product-card-picture" src="img/product/perceuse.png" alt="perceuse">
+                    <img class="product-card-picture" src="img/product/perceuse-pack.png" alt="perceuse">
                     <div class="container">
                         <div class="text">
                             Ceci est un produit.<br>
@@ -478,9 +495,9 @@
                     </div>
                 </a>
             </li>
-            <li class="product-card">
+            <li class="product-card sell-by-leroy-merlin">
                 <a class="tile" href="perceuse.html">
-                    <img class="product-card-picture" src="img/product/perceuse.png" alt="perceuse">
+                    <img class="product-card-picture" src="img/product/perceuse-pack.png" alt="perceuse">
                     <div class="container">
                         <div class="text">
                             Ceci est un produit.<br>

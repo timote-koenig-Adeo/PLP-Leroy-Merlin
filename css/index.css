@@ -7,13 +7,18 @@ main {
 
 #content {
     width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .product-list {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    padding: 0;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .product-card {
@@ -21,11 +26,64 @@ main {
     margin:  10px 2%;
 }
 
+.product-card .container{
+    font-weight: bold;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
 .product-card:hover {
     background-color: forestgreen;
     border-radius: 16px;
 }
 
+.product-card:hover .container{
+    color: white;
+}
+
 .product-card-picture {
     border-radius: 8px;
+}
+
+.global-filter-list {
+    margin: 20px 0 5px 0;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    gap: 10px;
+}
+
+.specific-filter-list {
+    margin: 5px 0 20px 0;
+    padding: 0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 90%;
+    gap: 10px;
+}
+
+.filter-button {
+    border: 2px solid rgb(0,0,0);
+    background-color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    padding: 4px 4px;
+}
+
+.active {
+    border: 2px solid forestgreen;
+    background-color: forestgreen;
+    color: white;
+    border-radius: 8px;
+}
+
+.hidden {
+    display: none !important;
 }

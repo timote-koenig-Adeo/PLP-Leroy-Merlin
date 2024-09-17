@@ -4,14 +4,12 @@ const onSearch = () => {
     document.getElementById('searchbar-container').style.backgroundColor = 'rgba(255,255,255,100%)';
     document.getElementById('history-list').style.display = "flex";
     document.getElementById('history-list').style.zIndex = "4";
-    document.querySelector('.history-link').style.zIndex = '4';
 };
 
 const offSearch = () => {
     document.getElementById('searchbar-container').style.backgroundColor = 'rgba(255,255,255,0%)';
     document.getElementById('history-list').style.display = "none";
     document.getElementById('history-list').style.zIndex = "-1";
-    document.querySelector('.history-link').style.zIndex = '-1';
 };
 
 document.addEventListener('click', function (event) {
@@ -173,3 +171,47 @@ document.addEventListener('click', function (event) {
         hourDrawer.classList.remove("hour-drawer-display-on")
     }
 });
+
+// functions to change displayed element according to filter
+
+function toggleFilter(category, button) {
+    const productsCategories = document.querySelectorAll(`.${category}`);
+
+    checkActiveFilters();
+    if (button.classList.contains('active')) {
+        productsCategories.forEach(product => {
+            product.style.display = "none";
+        });
+        button.classList.remove('active');
+    } else {
+        productsCategories.forEach(product => {
+            product.style.display = "flex";
+        });
+        button.classList.add('active');
+    }
+    checkNoActiveFilters();
+}
+
+function checkActiveFilters() {
+    const buttons = document.querySelectorAll('.filter-button');
+    const isActive = Array.from(buttons).some(button => button.classList.contains('active'));
+
+    if (!isActive) {
+        const allProducts = document.querySelectorAll('.product-card');
+        allProducts.forEach(product => {
+            product.style.display = "none";
+        });
+    }
+}
+
+function checkNoActiveFilters() {
+    const buttons = document.querySelectorAll('.filter-button');
+    const isActive = Array.from(buttons).some(button => button.classList.contains('active'));
+
+    if (!isActive) {
+        const allProducts = document.querySelectorAll('.product-card');
+        allProducts.forEach(product => {
+            product.style.display = "flex";
+        });
+    }
+}
