@@ -351,11 +351,63 @@
 <main>
     <div id="content">
         <div class="filter-drawer">
-
+            <div class="filter-drawer-tension filter-drawer-category">
+                <h1>Tension</h1>
+                <div class="filter-drawer-checkbox-container">
+                    <span>
+                        12V
+                        <input id="twelve-volt" class="filter-drawer-checkbox tension" type="checkbox">
+                    </span>
+                    <span>
+                        18V
+                        <input id="height-teen-volt" class="filter-drawer-checkbox tension" type="checkbox">
+                    </span>
+                </div>
+            </div>
+            <div class="filter-drawer-mark filter-drawer-category">
+                <h1>Marque</h1>
+                <div class="filter-drawer-checkbox-container">
+                    <span>
+                        Makita
+                        <input class="filter-drawer-checkbox mark" type="checkbox">
+                    </span>
+                    <span>
+                        Milwaukee
+                        <input class="filter-drawer-checkbox mark" type="checkbox">
+                    </span>
+                </div>
+            </div>
+            <div class="filter-drawer-price filter-drawer-category">
+                <h1>Prix</h1>
+                <div class="filter-drawer-checkbox-container">
+                    <span>
+                        200€
+                        <input class="filter-drawer-checkbox price" type="checkbox">
+                    </span>
+                    <span>
+                        20€
+                        <input class="filter-drawer-checkbox price" type="checkbox">
+                    </span>
+                </div>
+            </div>
+            <div class="filter-drawer-type filter-drawer-category">
+                <h1>Type</h1>
+                <div class="filter-drawer-checkbox-container">
+                    <span>
+                        Type 1
+                        <input class="filter-drawer-checkbox type" type="checkbox">
+                    </span>
+                    <span>
+                        type 2
+                        <input class="filter-drawer-checkbox type" type="checkbox">
+                    </span>
+                </div>
+            </div>
         </div>
         <ul class="global-filter-list">
             <li>
-                <button id="sell-by-leroy-merlin" class="filter-button" onclick="toggleFilter(`sell-by-leroy-merlin`, this)">
+                <button id="sell-by-leroy-merlin" class="filter-button"
+                        onclick="toggleFilter(`sell-by-leroy-merlin`, this)">
                     Vendu par Leroy Merlin
                 </button>
             </li>
@@ -372,7 +424,7 @@
         </ul>
         <ul class="specific-filter-list">
             <li>
-                <button id="Tension" class="filter-button" onclick="displayFilterDrawer(this)">
+                <button id="tension" class="filter-button" onclick="displayFilterDrawer(this)">
                     Tension
                 </button>
             </li>
@@ -389,6 +441,13 @@
             <li>
                 <button id="type" class="filter-button" onclick="displayFilterDrawer(this)">
                     Type
+                </button>
+            </li>
+        </ul>
+        <ul class="activated-filter-list">
+            <li class="activated-filter">
+                <button id="Reset" class="reset-button" onclick="resetFilterDrawerCheckbox()">
+                    Réinitialiser
                 </button>
             </li>
         </ul>
@@ -435,7 +494,7 @@
                     </div>
                 </a>
             </li>
-            <li class="product-card in-stock">
+            <li class="product-card in-stock twelve-volt">
                 <a class="tile" href="perceuse.html">
                     <img class="product-card-picture" src="img/product/perceuse.png" alt="perceuse">
                     <div class="container">
@@ -477,7 +536,7 @@
                     </div>
                 </a>
             </li>
-            <li class="product-card">
+            <li class="product-card height-teen-volt">
                 <a class="tile" href="perceuse.html">
                     <img class="product-card-picture" src="img/product/perceuse.png" alt="perceuse">
                     <div class="container">
@@ -584,4 +643,5 @@
 
 </footer>
 <script src="./script.js"></script>
+<script src="./js/searchbar.js"></script>
 </html>

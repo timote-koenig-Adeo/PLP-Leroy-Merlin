@@ -170,6 +170,11 @@ document.addEventListener('click', function (event) {
     if (isDisplayed && !areaOfHourDrawer.contains(event.target)) {
         hourDrawer.classList.remove("hour-drawer-display-on")
     }
+
+    // 12 volt checkbox
+
+    // 18 volt checkbox
+
 });
 
 // functions to change displayed element according to filter
@@ -194,9 +199,12 @@ function toggleFilter(category, button) {
 
 function checkActiveFilters() {
     const buttons = document.querySelectorAll('.filter-button');
-    const isActive = Array.from(buttons).some(button => button.classList.contains('active'));
+    const isActiveButton = Array.from(buttons).some(button => button.classList.contains('active'));
+    const allCheckbox = document.querySelectorAll(".filter-drawer-checkbox");
+    const isActiveCheckbox = Array.from(allCheckbox).some(checkbox => checkbox.checked);
 
-    if (!isActive) {
+
+    if (!isActiveButton && !isActiveCheckbox) {
         const allProducts = document.querySelectorAll('.product-card');
         allProducts.forEach(product => {
             product.style.display = "none";
@@ -206,9 +214,12 @@ function checkActiveFilters() {
 
 function checkNoActiveFilters() {
     const buttons = document.querySelectorAll('.filter-button');
-    const isActive = Array.from(buttons).some(button => button.classList.contains('active'));
+    const isActiveButton = Array.from(buttons).some(button => button.classList.contains('active'));
+    const allCheckbox = document.querySelectorAll(".filter-drawer-checkbox");
+    const isActiveCheckbox = Array.from(allCheckbox).some(checkbox => checkbox.checked);
 
-    if (!isActive) {
+
+    if (!isActiveButton && !isActiveCheckbox) {
         const allProducts = document.querySelectorAll('.product-card');
         allProducts.forEach(product => {
             product.style.display = "flex";
@@ -220,19 +231,81 @@ function checkNoActiveFilters() {
 
 const drawer = document.querySelector(".filter-drawer")
 const overlay = document.querySelector("body")
+let isOpenNow = 0;
 
 const displayFilterDrawer = (button) => {
-    drawer.classList.toggle("filter-drawer-visible")
+    drawer.classList.toggle("flex-visible")
     overlay.classList.toggle("overlay-visible")
-    event.stopPropagation();
+
+    const buttonId = button.id;
+
+    isOpenNow = 1;
+    document.querySelectorAll(".filter-drawer-category").forEach(element => {
+        element.classList.remove("flex-visible")
+    })
+    if (buttonId === "tension") {
+        document.querySelector(".filter-drawer-tension").classList.add("flex-visible")
+    }
+    if (buttonId === "mark") {
+        document.querySelector(".filter-drawer-mark").classList.add("flex-visible")
+    }
+    if (buttonId === "price") {
+        document.querySelector(".filter-drawer-price").classList.add("flex-visible")
+    }
+    if (buttonId === "type") {
+        document.querySelector(".filter-drawer-type").classList.add("flex-visible")
+    }
 }
 
 document.addEventListener('click', function (event) {
 
     const isDisplayed = window.getComputedStyle(drawer).display !== 'none';
 
-    if (isDisplayed && !drawer.contains(event.target)) {
-        drawer.classList.remove("filter-drawer-visible")
+    if (isOpenNow !== 1 && isDisplayed && !drawer.contains(event.target)) {
+        drawer.classList.remove("flex-visible")
         overlay.classList.remove("overlay-visible")
     }
+    isOpenNow = 0;
+
+    const allDrawerFilterCheckbox = document.querySelectorAll(".filter-drawer-category");
+
+    allDrawerFilterCheckbox.forEach(button => {
+        const allFilterCheckbox = button.querySelectorAll(".filter-drawer-checkbox")
+        let classList;
+        let isAddNow = false;
+
+        allFilterCheckbox.forEach(checkbox => {
+            if (checkbox.checked) {
+                isAddNow = true;
+                classList = checkbox.classList
+                document.getElementById(classList[1]).classList.add("filter-drawer-active");
+            } else  if (!isAddNow){
+                classList = checkbox.classList
+                document.getElementById(classList[1]).classList.remove("filter-drawer-active");
+            }
+        })
+    })
 });
+
+// function to reset state of checkbox
+
+const resetFilterDrawerCheckbox = () => {
+    const allCheckbox = document.querySelectorAll(".filter-drawer-checkbox")
+
+    // Enlève l'état checked de toute les checkbox des filtres
+    allCheckbox.forEach(element => {
+        element.checked = false;
+    })
+
+    // Désactive les filtres globaux
+    document.querySelectorAll(".filter-button").forEach(button => {
+        button.classList.remove("active")
+    })
+
+    // Affiche tout les produits
+    document.querySelectorAll(".product-card").forEach(element => {
+        element.style.display = "flex";
+    })
+}
+
+
