@@ -5,6 +5,68 @@ const allCheckbox = document.querySelectorAll(".filter-drawer-checkbox");
 const filterDrawer = document.querySelector(".filter-drawer");
 const overlay = document.querySelector("body")
 
+let activeFilterList = [];
+
+//----------------------------------------------------------------------------------------------------------------------//
+//                      Function to change filter button style
+
+// Change style open filter drawer button
+
+const toggleDrawerFilterButton = (checkbox) => {
+    const openFilterDrawerButton = document.getElementById(checkbox.classList[1]);
+    const allSameClassCheckbox = document.querySelectorAll(`.${checkbox.classList[1]}`)
+
+    const isFilterActivated = Array.from(allSameClassCheckbox).some(checkbox => checkbox.checked === true);
+
+    if (isFilterActivated) {
+        openFilterDrawerButton.classList.add("active-filter");
+        activeFilterList.push(`${openFilterDrawerButton.id}`)
+    } else {
+        openFilterDrawerButton.classList.remove("active-filter");
+        activeFilterList = removeElementFromList(activeFilterList, openFilterDrawerButton.id)
+    }
+    displayResetButton();
+}
+
+// Change style filter button
+
+const toggleFilterButton = (button) => {
+
+    if (!button.classList.contains("active-filter")) {
+        button.classList.add("active-filter");
+        activeFilterList.push(`${button.id}`)
+    } else {
+        button.classList.remove("active-filter");
+        activeFilterList = removeElementFromList(activeFilterList, button.id)
+    }
+    displayResetButton();
+}
+
+//----------------------------------------------------------------------------------------------------------------------//
+//                     Reset button action
+
+// Function reset
+
+const resetFilter = () => {
+    allCheckbox.forEach(element => {
+        element.checked = false;
+    })
+    removeClassFromListElements(allFilterButton, "active-filter")
+    displayAllProduct();
+    activeFilterList = [];
+    displayResetButton()
+}
+
+// Display reset button
+
+const displayResetButton = () => {
+    const resetButton = document.querySelector(".reset-button")
+    if (activeFilterList.length !== 0)
+        resetButton.classList.add("flex-visible");
+    else
+        resetButton.classList.remove("flex-visible");
+}
+
 //----------------------------------------------------------------------------------------------------------------------//
 //                      Fonction pour display/hide drawer selon button
 
@@ -40,42 +102,14 @@ const hideFilterDrawer = () => {
 }
 
 //----------------------------------------------------------------------------------------------------------------------//
-//                      Function to change filter button style
+//                     Function to remove element from list
 
-// Change style open filter drawer button
-
-const toggleDrawerFilterButtonStyle = (checkbox) => {
-    const openFilterDrawerButton = document.getElementById(checkbox.classList[1]);
-    const allSameClassCheckbox = document.querySelectorAll(`.${checkbox.classList[1]}`)
-
-    const isFilterActivated = Array.from(allSameClassCheckbox).some(checkbox => checkbox.checked === true);
-
-    if (isFilterActivated)
-        openFilterDrawerButton.classList.add("active-filter");
-    else
-        openFilterDrawerButton.classList.remove("active-filter");
-}
-
-// Change style filter button
-
-const toggleFilterButtonStyle = (button) => {
-    button.classList.toggle("active-filter")
+const removeElementFromList = (list, element) => {
+    return list.filter((listElement) => listElement !== element)
 }
 
 //----------------------------------------------------------------------------------------------------------------------//
-//                     Fonction pour reset tout les filtres
-
-const resetFilter = () => {
-    // Enlève l'état checked de toute les checkbox des filtres
-    allCheckbox.forEach(element => {
-        element.checked = false;
-    })
-    removeClassFromListElements(allFilterButton, "active-filter")
-    displayAllProduct();
-}
-
-//----------------------------------------------------------------------------------------------------------------------//
-//                     Fonction pour afficher/cacher tout les produits
+//                     Functions pour afficher/cacher tout les produits
 
 const displayAllProduct = () => {
     allProduct.forEach(element => {
@@ -90,7 +124,7 @@ const hideAllProduct = () => {
 }
 
 //----------------------------------------------------------------------------------------------------------------------//
-//                     Fonction pour ajouter/enlever une classe à tout les éléments d'une liste
+//                     Functions pour ajouter/enlever une classe à tout les éléments d'une liste
 
 const removeClassFromListElements = (list, className) => {
     list.forEach(element => {
