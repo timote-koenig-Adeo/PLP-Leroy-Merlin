@@ -356,11 +356,13 @@
                 <div class="filter-drawer-checkbox-container">
                     <span>
                         12V
-                        <input id="twelve-volt" class="filter-drawer-checkbox tension" type="checkbox" onclick="toggleFilterButtonStyle(this)">
+                        <input id="twelve-volt" class="filter-drawer-checkbox tension" type="checkbox"
+                               onclick="toggleDrawerFilterButtonStyle(this)">
                     </span>
                     <span>
                         18V
-                        <input id="height-teen-volt" class="filter-drawer-checkbox tension" type="checkbox" onclick="toggleFilterButtonStyle(this)">
+                        <input id="height-teen-volt" class="filter-drawer-checkbox tension" type="checkbox"
+                               onclick="toggleDrawerFilterButtonStyle(this)">
                     </span>
                 </div>
             </div>
@@ -369,11 +371,13 @@
                 <div class="filter-drawer-checkbox-container">
                     <span>
                         Makita
-                        <input class="filter-drawer-checkbox mark" type="checkbox" onclick="toggleFilterButtonStyle(this)">
+                        <input class="filter-drawer-checkbox mark" type="checkbox"
+                               onclick="toggleDrawerFilterButtonStyle(this)">
                     </span>
                     <span>
                         Milwaukee
-                        <input class="filter-drawer-checkbox mark" type="checkbox" onclick="toggleFilterButtonStyle(this)">
+                        <input class="filter-drawer-checkbox mark" type="checkbox"
+                               onclick="toggleDrawerFilterButtonStyle(this)">
                     </span>
                 </div>
             </div>
@@ -382,11 +386,13 @@
                 <div class="filter-drawer-checkbox-container">
                     <span>
                         200€
-                        <input class="filter-drawer-checkbox price" type="checkbox" onclick="toggleFilterButtonStyle(this)">
+                        <input class="filter-drawer-checkbox price" type="checkbox"
+                               onclick="toggleDrawerFilterButtonStyle(this)">
                     </span>
                     <span>
                         20€
-                        <input class="filter-drawer-checkbox price" type="checkbox" onclick="toggleFilterButtonStyle(this)">
+                        <input class="filter-drawer-checkbox price" type="checkbox"
+                               onclick="toggleDrawerFilterButtonStyle(this)">
                     </span>
                 </div>
             </div>
@@ -395,11 +401,13 @@
                 <div class="filter-drawer-checkbox-container">
                     <span>
                         Type 1
-                        <input class="filter-drawer-checkbox type" type="checkbox" onclick="toggleFilterButtonStyle(this)">
+                        <input class="filter-drawer-checkbox type" type="checkbox"
+                               onclick="toggleDrawerFilterButtonStyle(this)">
                     </span>
                     <span>
                         type 2
-                        <input class="filter-drawer-checkbox type" type="checkbox" onclick="toggleFilterButtonStyle(this)">
+                        <input class="filter-drawer-checkbox type" type="checkbox"
+                               onclick="toggleDrawerFilterButtonStyle(this)">
                     </span>
                 </div>
             </div>
@@ -407,17 +415,17 @@
         <ul class="global-filter-list">
             <li>
                 <button id="sell-by-leroy-merlin" class="filter-button"
-                        onclick="toggleFilter(`sell-by-leroy-merlin`, this)">
+                        onclick="toggleFilterButtonStyle(this)">
                     Vendu par Leroy Merlin
                 </button>
             </li>
             <li>
-                <button id="in-stock" class="filter-button" onclick="toggleFilter(`in-stock`, this)">
+                <button id="in-stock" class="filter-button" onclick="toggleFilterButtonStyle(this)">
                     En rayon dans mon magasin
                 </button>
             </li>
             <li>
-                <button id="withdrawal" class="filter-button" onclick="toggleFilter(`withdrawal`, this)">
+                <button id="withdrawal" class="filter-button" onclick="toggleFilterButtonStyle(this)">
                     Retrait en 2H
                 </button>
             </li>

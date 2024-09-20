@@ -44,7 +44,7 @@ const hideFilterDrawer = () => {
 
 // Change style open filter drawer button
 
-const toggleFilterButtonStyle = (checkbox) => {
+const toggleDrawerFilterButtonStyle = (checkbox) => {
     const openFilterDrawerButton = document.getElementById(checkbox.classList[1]);
     const allSameClassCheckbox = document.querySelectorAll(`.${checkbox.classList[1]}`)
 
@@ -54,6 +54,12 @@ const toggleFilterButtonStyle = (checkbox) => {
         openFilterDrawerButton.classList.add("active-filter");
     else
         openFilterDrawerButton.classList.remove("active-filter");
+}
+
+// Change style filter button
+
+const toggleFilterButtonStyle = (button) => {
+    button.classList.toggle("active-filter")
 }
 
 //----------------------------------------------------------------------------------------------------------------------//
