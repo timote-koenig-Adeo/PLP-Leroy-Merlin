@@ -351,55 +351,55 @@
 <main>
     <div id="content">
         <div class="filter-drawer">
-            <div class="filter-drawer-tension filter-drawer-category">
+            <div class="tension-drawer filter-drawer-category">
                 <h1>Tension</h1>
                 <div class="filter-drawer-checkbox-container">
                     <span>
                         12V
-                        <input id="twelve-volt" class="filter-drawer-checkbox tension" type="checkbox">
+                        <input id="twelve-volt" class="filter-drawer-checkbox tension" type="checkbox" onclick="toggleFilterButtonStyle(this)">
                     </span>
                     <span>
                         18V
-                        <input id="height-teen-volt" class="filter-drawer-checkbox tension" type="checkbox">
+                        <input id="height-teen-volt" class="filter-drawer-checkbox tension" type="checkbox" onclick="toggleFilterButtonStyle(this)">
                     </span>
                 </div>
             </div>
-            <div class="filter-drawer-mark filter-drawer-category">
+            <div class="mark-drawer filter-drawer-category">
                 <h1>Marque</h1>
                 <div class="filter-drawer-checkbox-container">
                     <span>
                         Makita
-                        <input class="filter-drawer-checkbox mark" type="checkbox">
+                        <input class="filter-drawer-checkbox mark" type="checkbox" onclick="toggleFilterButtonStyle(this)">
                     </span>
                     <span>
                         Milwaukee
-                        <input class="filter-drawer-checkbox mark" type="checkbox">
+                        <input class="filter-drawer-checkbox mark" type="checkbox" onclick="toggleFilterButtonStyle(this)">
                     </span>
                 </div>
             </div>
-            <div class="filter-drawer-price filter-drawer-category">
+            <div class="price-drawer filter-drawer-category">
                 <h1>Prix</h1>
                 <div class="filter-drawer-checkbox-container">
                     <span>
                         200€
-                        <input class="filter-drawer-checkbox price" type="checkbox">
+                        <input class="filter-drawer-checkbox price" type="checkbox" onclick="toggleFilterButtonStyle(this)">
                     </span>
                     <span>
                         20€
-                        <input class="filter-drawer-checkbox price" type="checkbox">
+                        <input class="filter-drawer-checkbox price" type="checkbox" onclick="toggleFilterButtonStyle(this)">
                     </span>
                 </div>
             </div>
-            <div class="filter-drawer-type filter-drawer-category">
+            <div class="type-drawer filter-drawer-category">
                 <h1>Type</h1>
                 <div class="filter-drawer-checkbox-container">
                     <span>
                         Type 1
-                        <input class="filter-drawer-checkbox type" type="checkbox">
+                        <input class="filter-drawer-checkbox type" type="checkbox" onclick="toggleFilterButtonStyle(this)">
                     </span>
                     <span>
                         type 2
-                        <input class="filter-drawer-checkbox type" type="checkbox">
+                        <input class="filter-drawer-checkbox type" type="checkbox" onclick="toggleFilterButtonStyle(this)">
                     </span>
                 </div>
             </div>
@@ -446,7 +446,7 @@
         </ul>
         <ul class="activated-filter-list">
             <li class="activated-filter">
-                <button id="Reset" class="reset-button" onclick="resetFilterDrawerCheckbox()">
+                <button id="Reset" class="reset-button" onclick="resetFilter()">
                     Réinitialiser
                 </button>
             </li>
@@ -642,6 +642,7 @@
 <footer>
 
 </footer>
-<script src="./script.js"></script>
+<script src="js/script.js"></script>
 <script src="./js/searchbar.js"></script>
+<script src="./js/hour-drawer.js"></script>
 </html>

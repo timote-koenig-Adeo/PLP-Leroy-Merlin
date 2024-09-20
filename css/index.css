@@ -1,24 +1,20 @@
+/*  global  */
+
+.flex-visible {
+    display: flex !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/*   Body   */
+
 main {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-body:after {
-    content: "";
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 10;
-    background-color: rgba(0,0,0,50%);
-}
-
-body.overlay-visible:after {
-    display: block !important;
 }
 
 #content {
@@ -27,6 +23,8 @@ body.overlay-visible:after {
     flex-direction: column;
     align-items: center;
 }
+
+/*  Product Area    */
 
 .product-list {
     display: flex;
@@ -37,9 +35,15 @@ body.overlay-visible:after {
     width: 100%;
 }
 
+/*  Product   */
+
 .product-card {
     padding: 10px 10px;
     margin:  10px 2%;
+}
+
+.display-product {
+    display: flex;
 }
 
 .product-card .container{
@@ -63,6 +67,8 @@ body.overlay-visible:after {
     border-radius: 8px;
 }
 
+/*  Filter list     */
+
 .global-filter-list {
     margin: 20px 0 5px 0;
     padding: 0;
@@ -85,6 +91,8 @@ body.overlay-visible:after {
     gap: 10px;
 }
 
+/* Filter Button */
+
 .filter-button {
     border: 2px solid rgb(0,0,0);
     background-color: white;
@@ -97,20 +105,10 @@ body.overlay-visible:after {
     border: 2px dashed black;
 }
 
-.filter-drawer-active {
+.active-filter {
     border: 2px solid forestgreen;
     background-color: forestgreen;
     color: white;
-}
-
-.active {
-    border: 2px solid forestgreen;
-    background-color: forestgreen;
-    color: white;
-}
-
-.hidden {
-    display: none !important;
 }
 
 .filter-drawer {
@@ -126,9 +124,25 @@ body.overlay-visible:after {
     justify-content: center;
 }
 
-.flex-visible {
-    display: flex !important;
+/* Reset button */
+
+.reset-button {
+    border: 0;
+    font-weight: bold;
+    padding: 8px 8px;
+    background-color: white;
 }
+
+.reset-button:hover {
+    border: 0;
+    font-weight: bold;
+    padding: 8px 8px;
+    background-color: forestgreen;
+    color: white;
+    border-radius: 8px;
+}
+
+/*  Filter Drawer */
 
 .filter-drawer-category {
     justify-content: start;
@@ -137,19 +151,19 @@ body.overlay-visible:after {
     width: 100%;
 }
 
-.filter-drawer-tension {
+.tension-drawer {
     display: none;
 }
 
-.filter-drawer-type {
+.type-drawer {
     display: none;
 }
 
-.filter-drawer-mark {
+.mark-drawer {
     display: none;
 }
 
-.filter-drawer-price {
+.price-drawer {
     display: none;
 }
 
@@ -178,21 +192,25 @@ body.overlay-visible:after {
     height: 24px;
 }
 
-.reset-button {
-    border: 0;
-    font-weight: bold;
-    padding: 8px 8px;
-    background-color: white;
+/*   Overlay   */
+
+body:after {
+    content: "";
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    background-color: rgba(0,0,0,50%);
 }
 
-.reset-button:hover {
-    border: 0;
-    font-weight: bold;
-    padding: 8px 8px;
-    background-color: forestgreen;
-    color: white;
-    border-radius: 8px;
+body.overlay-visible:after {
+    display: block !important;
 }
+
+/*  A trier   */
 
 .activated-filter-list {
     padding: 0;
@@ -209,4 +227,8 @@ body.overlay-visible:after {
 
 .activated-filter:first-child {
     padding: 0 0;
+}
+
+.display-product-with-filter {
+    display: flex;
 }
