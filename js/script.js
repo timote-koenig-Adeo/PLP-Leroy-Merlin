@@ -8,23 +8,49 @@ const overlay = document.querySelector("body")
 let activeFilterList = [];
 
 //----------------------------------------------------------------------------------------------------------------------//
+//                      Functions to display or not product
+
+const updateProductDisplay = () => {
+    if (activeFilterList.length === 0) {
+        allProduct.forEach(product => {
+            product.classList.add("display-product");
+        })
+    } else {
+        allProduct.forEach(product => {
+            product.classList.remove("display-product");
+        })
+        displayActiveProduct();
+    }
+}
+
+const displayActiveProduct = () => {
+    activeFilterList.forEach(filter => {
+        const filteredProduct = document.querySelectorAll(`.${filter}`)
+
+        filteredProduct.forEach(product => {
+            product.classList.add("display-product");
+        })
+    })
+}
+
+//----------------------------------------------------------------------------------------------------------------------//
 //                      Function to change filter button style
 
 // Change style open filter drawer button
 
 const toggleDrawerFilterButton = (checkbox) => {
     const openFilterDrawerButton = document.getElementById(checkbox.classList[1]);
-    const allSameClassCheckbox = document.querySelectorAll(`.${checkbox.classList[1]}`)
 
-    const isFilterActivated = Array.from(allSameClassCheckbox).some(checkbox => checkbox.checked === true);
+    const isFilterActivated = checkbox.checked;
 
     if (isFilterActivated) {
         openFilterDrawerButton.classList.add("active-filter");
-        activeFilterList.push(`${openFilterDrawerButton.id}`)
+        activeFilterList.push(`${checkbox.id}`)
     } else {
         openFilterDrawerButton.classList.remove("active-filter");
-        activeFilterList = removeElementFromList(activeFilterList, openFilterDrawerButton.id)
+        activeFilterList = removeElementFromList(activeFilterList, checkbox.id)
     }
+    updateProductDisplay();
     displayResetButton();
 }
 
@@ -39,6 +65,7 @@ const toggleFilterButton = (button) => {
         button.classList.remove("active-filter");
         activeFilterList = removeElementFromList(activeFilterList, button.id)
     }
+    updateProductDisplay();
     displayResetButton();
 }
 
