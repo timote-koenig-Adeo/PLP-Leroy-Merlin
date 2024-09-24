@@ -17,7 +17,7 @@
                         <div class="hour-drawer-header-text">
                             Mon Magasin
                         </div>
-                        <button onclick="toggleDisplayHourDrawer()">
+                        <button class="pointer-cursor" onclick="toggleDisplayHourDrawer()">
                             X
                         </button>
                     </div>
@@ -73,9 +73,9 @@
             <div class="header-components">
                 <div class="top-left-header">
                     <a class="header-logo-container" href="index.html">
-                        <img id="logo-leroy-merlin" src="img/Leroy-Merlin-Logo.png" alt="logo leroy merlin">
+                        <img id="logo-leroy-merlin" class="pointer-cursor" src="img/Leroy-Merlin-Logo.png" alt="logo leroy merlin">
                     </a>
-                    <button class="header-our-shop" onclick="toggleDisplayHourDrawer()">
+                    <button class="header-our-shop pointer-cursor" onclick="toggleDisplayHourDrawer()">
                         <img src="img/shop-solid.svg" width="30px">
                         <strong>Villneuve-d'Ascq - Lille</strong>
                     </button>
@@ -88,7 +88,7 @@
                     </ul>
                 </div>
                 <div id="logo-container">
-                    <a class="logo-content" href="https://www.leroymerlin.fr/" target="_blank">
+                    <a class="logo-content pointer-cursor" href="https://www.leroymerlin.fr/" target="_blank">
                         <div class="logo-picture">
                             <img id="help-logo" src="./img/circle-info-solid.svg" alt="help logo">
                         </div>
@@ -96,7 +96,7 @@
                             Aide et Contact
                         </div>
                     </a>
-                    <a class="logo-content" href="connect.html">
+                    <a class="logo-content pointer-cursor" href="connect.html">
                         <div class="logo-picture">
                             <img id="user-logo" src="./img/user.svg" alt="user logo">
                         </div>
@@ -104,7 +104,7 @@
                             Me connecter
                         </div>
                     </a>
-                    <a class="logo-content" href="https://www.leroymerlin.fr/" target="_blank">
+                    <a class="logo-content pointer-cursor" href="https://www.leroymerlin.fr/" target="_blank">
                         <div class="logo-picture">
                             <img id="shop-logo" src="./img/cart-shopping-solid.svg" alt="shop logo">
                         </div>
@@ -118,27 +118,29 @@
         <div class="header-navigation">
             <div class="header-navigation-content-left">
                 <ul class="navigation-list">
-                    <li data-menu-id="produits">Produits</li>
-                    <li data-menu-id="service">Pose et service</li>
-                    <li data-menu-id="tuto">Cours et tutos</li>
-                    <li data-menu-id="outils">Outils de conception</li>
+                    <li class="pointer-cursor" data-menu-id="produits">Produits</li>
+                    <li class="pointer-cursor" data-menu-id="service">Pose et service</li>
+                    <li class="pointer-cursor" data-menu-id="tuto">Cours et tutos</li>
+                    <li class="pointer-cursor" data-menu-id="outils">Outils de conception</li>
                 </ul>
             </div>
             <div class="header-navigation-content-right">
-
+                <a class="pointer-cursor" href="https://www.leroymerlin.fr" target="_blank">
+                    Bonnes affaires
+                </a>
             </div>
         </div>
         <div id="produits" class="burger-menu">
             <div class="burger-menu-content">
                 <div class="categories">
                     <ul class="categories-list">
-                        <li data-menu-id="terasse" class="categories-element">
+                        <li data-menu-id="terasse" class="categories-element pointer-cursor">
                             <img class="categories-element-picture" src="img/product/tondeuse.jpg">
                             <div class="categories-element-content">
                                 Terasse et jardin
                             </div>
                         </li>
-                        <li data-menu-id="outillage" class="categories-element">
+                        <li data-menu-id="outillage" class="categories-element pointer-cursor">
                             <img class="categories-element-picture" src="img/product/perceuse.png">
                             <div class="categories-element-content">
                                 Outillage

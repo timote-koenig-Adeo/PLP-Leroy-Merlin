@@ -1,4 +1,8 @@
 
+.pointer-cursor {
+    cursor: pointer;
+}
+
 body {
     margin: 0;
 }
@@ -231,6 +235,15 @@ header {
 .header-navigation-content-right {
     display: flex;
     justify-content: right;
+    align-items: center;
+}
+
+.header-navigation-content-right a {
+    padding: 1rem;
+}
+
+.header-navigation-content-right a:hover {
+    text-decoration: underline;
 }
 
 .burger-menu {
