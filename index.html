@@ -73,7 +73,8 @@
             <div class="header-components">
                 <div class="top-left-header">
                     <a class="header-logo-container" href="index.html">
-                        <img id="logo-leroy-merlin" class="pointer-cursor" src="img/Leroy-Merlin-Logo.png" alt="logo leroy merlin">
+                        <img id="logo-leroy-merlin" class="pointer-cursor" src="img/Leroy-Merlin-Logo.png"
+                             alt="logo leroy merlin">
                     </a>
                     <button class="header-our-shop pointer-cursor" onclick="toggleDisplayHourDrawer()">
                         <img src="img/shop-solid.svg" width="30px">
@@ -354,63 +355,71 @@
     <div id="content">
         <div class="filter-drawer">
             <div class="tension-drawer filter-drawer-category">
-                <h1>Tension</h1>
                 <div class="filter-drawer-checkbox-container">
+                    <h1>Tension</h1>
                     <span>
                         12V
-                        <input id="twelve-volt" class="filter-drawer-checkbox tension" type="checkbox"
-                               onclick="toggleDrawerFilterButton(this)">
+                        <input id="twelve-volt" class="filter-drawer-checkbox tension" type="checkbox">
                     </span>
                     <span>
                         18V
-                        <input id="height-teen-volt" class="filter-drawer-checkbox tension" type="checkbox"
-                               onclick="toggleDrawerFilterButton(this)">
+                        <input id="height-teen-volt" class="filter-drawer-checkbox tension" type="checkbox">
                     </span>
+                </div>
+                <div class="filter-drawer-button-container">
+                    <button class="display-button tension" onclick="toggleDrawerFilterButton(this)">Afficher</button>
+                    <button class="drawer-reset-button tension" onclick="resetDrawerFilterButton(this)">Réinitialiser</button>
                 </div>
             </div>
             <div class="mark-drawer filter-drawer-category">
-                <h1>Marque</h1>
                 <div class="filter-drawer-checkbox-container">
+                    <h1>Marque</h1>
                     <span>
                         Makita
-                        <input class="filter-drawer-checkbox mark" type="checkbox"
-                               onclick="toggleDrawerFilterButton(this)">
+                        <input id="makita" class="filter-drawer-checkbox mark" type="checkbox">
                     </span>
                     <span>
                         Milwaukee
-                        <input class="filter-drawer-checkbox mark" type="checkbox"
-                               onclick="toggleDrawerFilterButton(this)">
+                        <input id="milwaukee" class="filter-drawer-checkbox mark" type="checkbox">
                     </span>
+                </div>
+                <div class="filter-drawer-button-container">
+                    <button class="display-button mark" onclick="toggleDrawerFilterButton(this)">Afficher</button>
+                    <button class="drawer-reset-button mark" onclick="resetDrawerFilterButton(this)">Réinitialiser</button>
                 </div>
             </div>
             <div class="price-drawer filter-drawer-category">
-                <h1>Prix</h1>
                 <div class="filter-drawer-checkbox-container">
+                    <h1>Prix</h1>
                     <span>
                         200€
-                        <input class="filter-drawer-checkbox price" type="checkbox"
-                               onclick="toggleDrawerFilterButton(this)">
+                        <input id="two-hundred" class="filter-drawer-checkbox price" type="checkbox">
                     </span>
                     <span>
                         20€
-                        <input class="filter-drawer-checkbox price" type="checkbox"
-                               onclick="toggleDrawerFilterButton(this)">
+                        <input id="twenty" class="filter-drawer-checkbox price" type="checkbox">
                     </span>
+                </div>
+                <div class="filter-drawer-button-container">
+                    <button class="display-button price" onclick="toggleDrawerFilterButton(this)">Afficher</button>
+                    <button class="drawer-reset-button price" onclick="resetDrawerFilterButton(this)">Réinitialiser</button>
                 </div>
             </div>
             <div class="type-drawer filter-drawer-category">
-                <h1>Type</h1>
                 <div class="filter-drawer-checkbox-container">
+                    <h1>Type</h1>
                     <span>
                         Type 1
-                        <input class="filter-drawer-checkbox type" type="checkbox"
-                               onclick="toggleDrawerFilterButton(this)">
+                        <input id="type-one" class="filter-drawer-checkbox type" type="checkbox">
                     </span>
                     <span>
                         type 2
-                        <input class="filter-drawer-checkbox type" type="checkbox"
-                               onclick="toggleDrawerFilterButton(this)">
+                        <input id="type-two" class="filter-drawer-checkbox type" type="checkbox">
                     </span>
+                </div>
+                <div class="filter-drawer-button-container">
+                    <button class="display-button type" onclick="toggleDrawerFilterButton(this)">Afficher</button>
+                    <button class="drawer-reset-button type" onclick="resetDrawerFilterButton(this)">Réinitialiser</button>
                 </div>
             </div>
         </div>
@@ -435,7 +444,7 @@
         <ul class="specific-filter-list">
             <li>
                 <button id="tension" class="filter-button" onclick="displayFilterDrawer(this)">
-                    Tension
+                    Tension (en volt)
                 </button>
             </li>
             <li>

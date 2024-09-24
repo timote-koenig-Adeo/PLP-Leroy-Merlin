@@ -1,17 +1,19 @@
 const allProduct = document.querySelectorAll(".product-card");
-const allFilterButton = document.querySelectorAll(".filter-button");
+const allCheckboxButton = document.querySelectorAll(".specific-filter-list li button");
 const allCheckbox = document.querySelectorAll(".filter-drawer-checkbox");
 
 const filterDrawer = document.querySelector(".filter-drawer");
 const overlay = document.querySelector("body")
 
+let activeToggleFilterList = [];
+let activeCheckboxFilterList = [];
 let activeFilterList = [];
 
 //----------------------------------------------------------------------------------------------------------------------//
 //                      Functions to display or not product
 
-const updateProductDisplay = () => {
-    if (activeFilterList.length === 0) {
+const updateProductDisplay = (list) => {
+    if (list.length === 0) {
         allProduct.forEach(product => {
             product.classList.add("display-product");
         })
@@ -19,12 +21,12 @@ const updateProductDisplay = () => {
         allProduct.forEach(product => {
             product.classList.remove("display-product");
         })
-        displayActiveProduct();
+        displayActiveProduct(list);
     }
 }
 
-const displayActiveProduct = () => {
-    activeFilterList.forEach(filter => {
+const displayActiveProduct = (list) => {
+    list.forEach(filter => {
         const filteredProduct = document.querySelectorAll(`.${filter}`)
 
         filteredProduct.forEach(product => {
@@ -38,20 +40,52 @@ const displayActiveProduct = () => {
 
 // Change style open filter drawer button
 
-const toggleDrawerFilterButton = (checkbox) => {
-    const openFilterDrawerButton = document.getElementById(checkbox.classList[1]);
+const toggleDrawerFilterButton = (button) => {
+    const openFilterDrawerButton = document.getElementById(`${button.classList[1]}`);
+    const checkboxList = document.querySelectorAll(`.filter-drawer-checkbox.${button.classList[1]}`);
+    let activeClassCheckbox = [];
 
-    const isFilterActivated = checkbox.checked;
+    checkboxList.forEach(checkbox => {
+        if (checkbox.checked)
+            activeClassCheckbox.push(checkbox.id);
+        else
+            activeCheckboxFilterList = removeElementFromList(activeCheckboxFilterList, checkbox.id)
+    })
 
-    if (isFilterActivated) {
-        openFilterDrawerButton.classList.add("active-filter");
-        activeFilterList.push(`${checkbox.id}`)
+    if (activeClassCheckbox.length !== 0) {
+        openFilterDrawerButton.classList.add("active-filter")
     } else {
         openFilterDrawerButton.classList.remove("active-filter");
-        activeFilterList = removeElementFromList(activeFilterList, checkbox.id)
     }
-    updateProductDisplay();
+
+    activeCheckboxFilterList = activeCheckboxFilterList.concat(activeClassCheckbox);
+    activeFilterList = activeToggleFilterList.concat(activeCheckboxFilterList);
+    hideFilterDrawer();
+    updateProductDisplay(activeFilterList);
     displayResetButton();
+}
+
+const resetDrawerFilterButton = (button) => {
+    const openFilterDrawerButton = document.getElementById(`${button.classList[1]}`);
+    const checkboxList = document.querySelectorAll(`.filter-drawer-checkbox.${button.classList[1]}`);
+
+    checkboxList.forEach(checkbox => {
+        checkbox.checked = false;
+        activeCheckboxFilterList = removeElementFromList(activeCheckboxFilterList, checkbox.id);
+    })
+    openFilterDrawerButton.classList.remove("active-filter");
+
+    activeFilterList = activeToggleFilterList.concat(activeCheckboxFilterList);
+    updateProductDisplay(activeFilterList);
+    displayResetButton();
+}
+
+//  set the statue of checkbox with activeCheckboxFilterList
+
+const updateCheckbox = () => {
+    allCheckbox.forEach(checkbox => {
+        checkbox.checked = activeCheckboxFilterList.includes(checkbox.id);
+    })
 }
 
 // Change style filter button
@@ -60,13 +94,13 @@ const toggleFilterButton = (button) => {
 
     if (!button.classList.contains("active-filter")) {
         button.classList.add("active-filter");
-        activeFilterList.push(`${button.id}`)
+        activeToggleFilterList.push(`${button.id}`)
     } else {
         button.classList.remove("active-filter");
-        activeFilterList = removeElementFromList(activeFilterList, button.id)
+        activeToggleFilterList = removeElementFromList(activeToggleFilterList, button.id)
     }
-    updateProductDisplay();
-    displayResetButton();
+    activeFilterList = activeToggleFilterList.concat(activeCheckboxFilterList);
+    updateProductDisplay(activeFilterList);
 }
 
 //----------------------------------------------------------------------------------------------------------------------//
@@ -78,9 +112,11 @@ const resetFilter = () => {
     allCheckbox.forEach(element => {
         element.checked = false;
     })
-    removeClassFromListElements(allFilterButton, "active-filter")
+    removeClassFromListElements(allCheckboxButton, "active-filter")
     displayAllProduct();
-    activeFilterList = [];
+    if (activeToggleFilterList.length !== 0)
+        updateProductDisplay(activeToggleFilterList);
+    activeCheckboxFilterList = [];
     displayResetButton()
 }
 
@@ -88,7 +124,7 @@ const resetFilter = () => {
 
 const displayResetButton = () => {
     const resetButton = document.querySelector(".reset-button")
-    if (activeFilterList.length !== 0)
+    if (activeCheckboxFilterList.length !== 0)
         resetButton.classList.add("flex-visible");
     else
         resetButton.classList.remove("flex-visible");
@@ -103,8 +139,10 @@ document.addEventListener('click', function (event) {
 
     const isDrawerDisplayed = window.getComputedStyle(filterDrawer).display !== 'none';
 
-    if (isDrawerDisplayed && !filterDrawer.contains(event.target))
+    if (isDrawerDisplayed && !filterDrawer.contains(event.target)) {
         hideFilterDrawer();
+        updateCheckbox();
+        }
 })
 
 
