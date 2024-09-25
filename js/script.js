@@ -46,10 +46,12 @@ const toggleDrawerFilterButton = (button) => {
     let activeClassCheckbox = [];
 
     checkboxList.forEach(checkbox => {
-        if (checkbox.checked)
-            activeClassCheckbox.push(checkbox.id);
-        else
-            activeCheckboxFilterList = removeElementFromList(activeCheckboxFilterList, checkbox.id)
+        if (!activeCheckboxFilterList.includes(checkbox.id)) {
+            if (checkbox.checked)
+                activeClassCheckbox.push(checkbox.id);
+            else
+                activeCheckboxFilterList = removeElementFromList(activeCheckboxFilterList, checkbox.id)
+        }
     })
 
     if (activeClassCheckbox.length !== 0) {
@@ -62,6 +64,7 @@ const toggleDrawerFilterButton = (button) => {
     activeFilterList = activeToggleFilterList.concat(activeCheckboxFilterList);
     hideFilterDrawer();
     updateProductDisplay(activeFilterList);
+    updateFilterTag();
     displayResetButton();
 }
 
@@ -77,6 +80,7 @@ const resetDrawerFilterButton = (button) => {
 
     activeFilterList = activeToggleFilterList.concat(activeCheckboxFilterList);
     updateProductDisplay(activeFilterList);
+    updateFilterTag();
     displayResetButton();
 }
 
@@ -117,6 +121,7 @@ const resetFilter = () => {
     if (activeToggleFilterList.length !== 0)
         updateProductDisplay(activeToggleFilterList);
     activeCheckboxFilterList = [];
+    updateFilterTag();
     displayResetButton()
 }
 
@@ -131,7 +136,90 @@ const displayResetButton = () => {
 }
 
 //----------------------------------------------------------------------------------------------------------------------//
-//                      Fonction pour display/hide drawer selon button
+//                      Function to display/hide activate filter tag
+
+const updateFilterTag = () => {
+    const listContainer = document.querySelector(".activated-filter-list")
+
+    listContainer.innerHTML = "<li class=\"reset-button-container\">\n" +
+        "                <button id=\"Reset\" class=\"reset-button\" onclick=\"resetFilter()\">\n" +
+        "                    Réinitialiser\n" +
+        "                </button>\n" +
+        "            </li>";
+    activeCheckboxFilterList.forEach(checkbox => {
+        listContainer.insertBefore(createFilterTagListElement(checkbox), listContainer.firstChild)
+    })
+}
+
+const createFilterTagListElement = (checkbox) => {
+    let newListTag = document.createElement('li');
+    newListTag.classList.add("filter-tag")
+    newListTag.id = `tag-${checkbox}`
+
+    let newTextArea = document.createElement("span");
+    newTextArea.classList.add("filter-tag-text")
+    newTextArea.innerText = transcriptCheckbox(checkbox);
+
+    newListTag.appendChild(newTextArea);
+
+    let button = document.createElement("button");
+    button.id = `button-${checkbox}`;
+    button.className = 'filter-tag-button';
+    button.innerText = 'X';
+    button.onclick = function() {
+        deleteTag(this);
+    };
+
+    newListTag.appendChild(button);
+
+    return newListTag;
+}
+
+const transcriptCheckbox = (name) => {
+    if (name === "twelve-volt")
+        return "12V";
+    if (name === "height-teen-volt")
+        return "18V";
+    if (name === "makita")
+        return "Makita";
+    if (name === "milwaukee")
+        return "Milwaukee";
+    if (name === "two-hundred")
+        return "200€";
+    if (name === "twenty")
+        return "20€";
+    if (name === "type-one")
+        return "Type 1";
+    if (name === "Type-two")
+        return "Type 2";
+    return name;
+}
+
+const deleteTag = (tag) => {
+    const filterName = tag.id.substring(7);
+
+    const filterCheckbox = document.querySelector(`#${filterName}`)
+
+    const filterButton = document.querySelector(`#${filterCheckbox.classList[1]}`);
+
+    const sameClassCheckbox = document.querySelectorAll(`.${filterCheckbox.classList[1]}`);
+    let isCheckboxClassActivated;
+
+    activeCheckboxFilterList = removeElementFromList(activeCheckboxFilterList, filterName)
+
+    filterCheckbox.checked = false;
+    isCheckboxClassActivated = Array.from(sameClassCheckbox).some(checkbox => checkbox.checked)
+    if (!isCheckboxClassActivated)
+        filterButton.classList.remove("active-filter")
+
+    activeFilterList = activeToggleFilterList.concat(activeCheckboxFilterList);
+    updateProductDisplay(activeFilterList)
+    updateFilterTag()
+    displayResetButton()
+}
+
+//----------------------------------------------------------------------------------------------------------------------//
+//                      Function pour display/hide drawer selon button
 
 // Detect click depending on filterDrawer
 
@@ -142,7 +230,7 @@ document.addEventListener('click', function (event) {
     if (isDrawerDisplayed && !filterDrawer.contains(event.target)) {
         hideFilterDrawer();
         updateCheckbox();
-        }
+    }
 })
 
 

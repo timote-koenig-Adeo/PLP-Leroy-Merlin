@@ -126,6 +126,47 @@ main {
     justify-content: center;
 }
 
+/* Tag */
+
+.activated-filter-list {
+    margin: 5px 0 20px 0;
+    padding: 0;
+    width: 90%;
+    height: 2rem;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-tag {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 28px;
+    background-color: black;
+    height: fit-content;
+    width: fit-content;
+}
+
+.filter-tag-text {
+    padding: 8px 8px;
+    color: white;
+}
+
+.filter-tag-button {
+    border: 0;
+    border-radius: 2450px;
+    margin: 0 8px 0 0;
+    padding: 4px 8px;
+    background-color: #dfdfdf;
+}
+
+.filter-tag-button:hover {
+    background-color: #fff;
+}
+
 /* Reset button */
 
 .reset-button {
@@ -235,16 +276,6 @@ body.overlay-visible:after {
 }
 
 /*  A trier   */
-
-.activated-filter-list {
-    padding: 0;
-    margin: 0;
-    width: 90%;
-    height: 2rem;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-}
 
 .activated-filter {
     padding: 0 8px;
