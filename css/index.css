@@ -24,38 +24,6 @@ main {
     align-items: center;
 }
 
-/*  page information   */
-
-.page-information {
-    display: block;
-    justify-content: left;
-    align-items: center;
-    width: 100%;
-}
-
-.page-name {
-    display: flex;
-    justify-content: left;
-    margin: 1rem;
-}
-
-.ariane-navigation {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    width: 100%;
-    margin: 1rem;
-}
-
-.ariane-navigation a{
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.ariane-navigation a:hover{
-    color: #2196F3;
-}
-
 /*  Product Area    */
 
 .product-list {
