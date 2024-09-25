@@ -1,3 +1,6 @@
+
+//                                   SEARCHBAR
+
 const searchbar = document.getElementById('searchbar');
 
 const onSearch = () => {
@@ -60,9 +63,35 @@ document.getElementById('searchbar').addEventListener('keypress', function (even
             historyList.removeChild(historyList.lastChild);
         if (historyList.childElementCount < 6)
             appendHistory(input, historyList);
+        createSearchPage(input)
+        offSearch()
     }
 });
 
+const createSearchPage = (searchedWord) => {
+    let content = document.querySelector("#content")
+    content.innerHTML = "";
+
+    let titleArea = document.createElement("div")
+
+    let title = document.createElement("h1")
+    title.innerHTML = `${searchedWord}`
+
+    let textArea = document.createElement("div")
+
+    let text = document.createElement("span")
+    text.innerHTML = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+
+    titleArea.appendChild(title)
+
+    textArea.appendChild(text)
+
+    content.appendChild(titleArea)
+    content.appendChild(textArea)
+}
+
+//----------------------------------------------------------------------------------------------------------------------//
+//                                       OTHER
 
 // show or hide burger-menu
 const navigationItems = document.querySelectorAll('.navigation-list li');

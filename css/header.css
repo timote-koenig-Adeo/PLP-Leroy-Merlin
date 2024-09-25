@@ -23,6 +23,20 @@ header {
     display: flex;
 }
 
+#content {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .header-global {
     position: fixed;
     width: 100%;
