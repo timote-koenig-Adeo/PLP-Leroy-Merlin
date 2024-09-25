@@ -190,7 +190,7 @@ const transcriptCheckbox = (name) => {
         return "20€";
     if (name === "type-one")
         return "Type 1";
-    if (name === "Type-two")
+    if (name === "type-two")
         return "Type 2";
     return name;
 }
