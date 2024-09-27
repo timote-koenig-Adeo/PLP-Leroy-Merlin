@@ -353,7 +353,7 @@ const changePage = () => {
     const productPageOne = document.querySelector(".one")
     const productPageTwo = document.querySelector(".two")
     if (actualPage === 2) {
-        productPageTwo.classList.add("hidden")
+        productPageOne.classList.add("hidden")
         productPageTwo.classList.add("flex-visible")
     }
     if (actualPage === 1) {
