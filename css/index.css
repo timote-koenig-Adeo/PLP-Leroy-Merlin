@@ -179,6 +179,15 @@
 
 #mqm-applied-button {
     margin: auto;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+#mqm-applied-button:hover {
+    background-color: forestgreen;
+    border: 1px solid forestgreen;
+    color: white;
 }
 
 .mqm-button-navigation {
