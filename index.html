@@ -77,7 +77,7 @@
                              alt="logo leroy merlin">
                     </a>
                     <button class="header-our-shop pointer-cursor" onclick="toggleDisplayHourDrawer()">
-                        <img src="img/shop-solid.svg" width="30px">
+                        <img src="img/shop-solid.svg" alt="shop symbol" width="30px">
                         <strong>Villneuve-d'Ascq - Lille</strong>
                     </button>
                 </div>
@@ -136,13 +136,13 @@
                 <div class="categories">
                     <ul class="categories-list">
                         <li data-menu-id="terasse" class="categories-element pointer-cursor">
-                            <img class="categories-element-picture" src="img/product/tondeuse.jpg">
+                            <img class="categories-element-picture" src="img/product/tondeuse.jpg" alt="tondeuse picture">
                             <div class="categories-element-content">
                                 Terasse et jardin
                             </div>
                         </li>
                         <li data-menu-id="outillage" class="categories-element pointer-cursor">
-                            <img class="categories-element-picture" src="img/product/perceuse.png">
+                            <img class="categories-element-picture" src="img/product/perceuse.png" alt="perceuse picture">
                             <div class="categories-element-content">
                                 Outillage
                             </div>
@@ -158,11 +158,11 @@
                         <div class="navigation-filter">
                             <div class="navigation-specific-filter">
                                 <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                                     width="20px">
+                                                                                     alt="euro symbol" width="20px">
                                     <div class="navigation-specific-filter-content">Les petits prix jardin</div>
                                 </a>
                                 <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                                     width="20px">
+                                                                                     alt="euro symbol" width="20px">
                                     <div class="navigation-specific-filter-content">Spécial jardin: Aménager, profiter
                                         et jardiner
                                     </div>
@@ -195,19 +195,19 @@
                         <div class="navigation-filter">
                             <div class="navigation-specific-filter">
                                 <a class="navigation-specific-filter-container"><img src="img/toolbox-solid.svg"
-                                                                                     width="20px">
+                                                                                     alt="toolbox symbol" width="20px">
                                     <div class="navigation-specific-filter-content">Prêt à bricoler avec DEXTER</div>
                                 </a>
                                 <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                                     width="20px">
+                                                                                     alt="euro symbol" width="20px">
                                     <div class="navigation-specific-filter-content">Les bons plans Outillage</div>
                                 </a>
                                 <a class="navigation-specific-filter-container"><img src="img/toolbox-solid.svg"
-                                                                                     width="20px">
+                                                                                     alt="toolbox symbol" width="20px">
                                     <div class="navigation-specific-filter-content">Loaction de matériel</div>
                                 </a>
                                 <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                                     width="20px">
+                                                                                     alt="euro symbol" width="20px">
                                     <div class="navigation-specific-filter-content">Nos produits reconditionnés</div>
                                 </a>
                             </div>
@@ -243,11 +243,11 @@
                 <div class="navigation-filter">
                     <div class="navigation-specific-filter">
                         <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                             width="20px">
+                                                                             alt="euro symbol" width="20px">
                             <div class="navigation-specific-filter-content">Rénovation complète</div>
                         </a>
                         <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                             width="20px">
+                                                                             alt="euro symbol" width="20px">
                             <div class="navigation-specific-filter-content">Nos offres de rénovation</div>
                         </a>
                     </div>
@@ -280,11 +280,11 @@
                 <div class="navigation-filter">
                     <div class="navigation-specific-filter">
                         <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                             width="20px">
+                                                                             alt="euro symbol" width="20px">
                             <div class="navigation-specific-filter-content">Conseils pratiques</div>
                         </a>
                         <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                             width="20px">
+                                                                             alt="euro symbol" width="20px">
                             <div class="navigation-specific-filter-content">Coaching à domicile</div>
                         </a>
                     </div>
@@ -317,15 +317,15 @@
                 <div class="navigation-filter">
                     <div class="navigation-specific-filter">
                         <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                             width="20px">
+                                                                             alt="euro symbol" width="20px">
                             <div class="navigation-specific-filter-content">Mon budget cuisine</div>
                         </a>
                         <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                             width="20px">
+                                                                             alt="euro symbol" width="20px">
                             <div class="navigation-specific-filter-content">Mon budget rangement</div>
                         </a>
                         <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                             width="20px">
+                                                                             alt="euro symbol" width="20px">
                             <div class="navigation-specific-filter-content">Ma cuisine 3D</div>
                         </a>
                     </div>
@@ -363,6 +363,61 @@
                 <h1>
                     Perceuse
                 </h1>
+            </div>
+        </div>
+        <div class="pills">
+            <ul class="pill-list">
+                <li class="pill-case" onclick="togglePillsFilter('twelve-volt')">
+                    <img src="img/bolt-solid.svg" alt="procuct picture" height="30rem">
+                    12V
+                </li>
+                <li class="pill-case" onclick="togglePillsFilter('height-teen-volt')">
+                    <img src="img/bolt-solid.svg" alt="procuct picture" height="30rem">
+                    18V
+                </li>
+            </ul>
+        </div>
+        <div class="multi-question-module">
+            <div class="mqm-question-area">
+                <h4><strong>Quel voltage?</strong></h4>
+                <ul class="multi-question-module-list">
+                <li class="multi-question-module-element">
+                    <input id="mqm-twelve-volt" class="mqm-checkbox" type="checkbox">
+                    <div onclick="toggleMqmCheckbox('mqm-twelve-volt')">
+                        <img src="img/bolt-solid.svg" alt="procuct picture" height="150px">
+                        12V
+                    </div>
+                </li>
+                <li class="multi-question-module-element">
+                    <input id="mqm-height-teen-volt" class="mqm-checkbox" type="checkbox">
+                    <div onclick="toggleMqmCheckbox('mqm-height-teen-volt')">
+                        <img src="img/bolt-solid.svg" alt="procuct picture" height="150px">
+                        18V
+                    </div>
+                </li>
+            </ul>
+            </div>
+            <div class="mqm-completed">
+                <h4><strong>Merci pour vos réponses!</strong></h4>
+                <div class="mqm-completed-text-area">
+                    <span><strong>
+                        Retrouvez ci-dessous les produits qui correspondent à vos besoins
+                    </strong></span><br>
+                    <span>
+                        Vous pouvez modifier votre sélection si vous le souhaitez
+                    </span>
+                </div>
+            </div>
+            <div class="multi-question-module-button">
+                <a id="mqm-back-button" class="mqm-button-navigation" onclick="mqmBack()">
+                    Retour
+                </a>
+                <button id="mqm-applied-button" onclick="mqmValidation()">
+                    Valider
+                </button>
+                <a id="mqm-reset-button" class="mqm-button-navigation" onclick="mqmReset()">
+                    Réinitialiser
+                </a>
             </div>
         </div>
         <div class="filter-drawer">
@@ -486,7 +541,7 @@
                 </button>
             </li>
         </ul>
-        <ul class="product-list">
+        <ul class="product-list one">
             <li class="product-card display-product withdrawal in-stock">
                 <a class="tile" href="perceuse.html">
                     <img class="product-card-picture" src="img/product/perceuse.png" alt="perceuse">
@@ -671,11 +726,66 @@
                 </a>
             </li>
         </ul>
+        <ul class="product-list two">
+            <li class="product-card display-product sell-by-leroy-merlin">
+                <a class="tile" href="perceuse.html">
+                    <img class="product-card-picture" src="img/product/perceuse-pack.png" alt="perceuse">
+                    <div class="container">
+                        <div class="text">
+                            Ceci est un produit.<br>
+                            Qui a une petite description.
+                        </div>
+                        <div class="price">
+                            <strong>200€</strong>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="product-card display-product">
+                <a class="tile" href="perceuse.html">
+                    <img class="product-card-picture" src="img/product/perceuse.png" alt="perceuse">
+                    <div class="container">
+                        <div class="text">
+                            Ceci est un produit.<br>
+                            Qui a une petite description.
+                        </div>
+                        <div class="price">
+                            <strong>20€</strong>
+                        </div>
+                    </div>
+                </a>
+            </li>
+            <li class="product-card display-product sell-by-leroy-merlin">
+                <a class="tile" href="perceuse.html">
+                    <img class="product-card-picture" src="img/product/perceuse-pack.png" alt="perceuse">
+                    <div class="container">
+                        <div class="text">
+                            Ceci est un produit.<br>
+                            Qui a une petite description.
+                        </div>
+                        <div class="price">
+                            <strong>200€</strong>
+                        </div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <div class="page-selection">
+            <button class="page-navigator previous page-navigator-off" onclick="previousPage(this)">
+                <img src="img/chevron-left-solid.svg" alt="left symbol" width="40px" height="40px">
+            </button>
+            <select class="page-selector" name="page" onchange="changePage()">
+                <option value="1">1 sur 2</option>
+                <option value="2">2 sur 2</option>
+            </select>
+            <button class="page-navigator next" onclick="nextPage(this)">
+                <img src="img/chevron-right-solid.svg" alt="right symbol" width="40px" height="40px">
+            </button>
+        </div>
     </div>
 </main>
 </body>
 <footer>
-
 </footer>
 <script src="js/script.js"></script>
 <script src="./js/searchbar.js"></script>

@@ -49,8 +49,6 @@ const toggleDrawerFilterButton = (button) => {
         if (!activeCheckboxFilterList.includes(checkbox.id)) {
             if (checkbox.checked)
                 activeClassCheckbox.push(checkbox.id);
-            else
-                activeCheckboxFilterList = removeElementFromList(activeCheckboxFilterList, checkbox.id)
         }
     })
 
@@ -105,6 +103,94 @@ const toggleFilterButton = (button) => {
     }
     activeFilterList = activeToggleFilterList.concat(activeCheckboxFilterList);
     updateProductDisplay(activeFilterList);
+}
+
+//----------------------------------------------------------------------------------------------------------------------//
+//                      Function for pills
+
+const togglePillsFilter = (filterId) => {
+    const checkbox = document.querySelector(`#${filterId}`)
+
+    if (checkbox.checked === false) {
+        checkbox.checked = true;
+        toggleDrawerFilterButton(checkbox);
+    }
+}
+
+//----------------------------------------------------------------------------------------------------------------------//
+//                      Function for MQM
+
+
+const mqmQuestionArea = document.querySelector(".mqm-question-area")
+const mqmCompleted = document.querySelector(".mqm-completed")
+const mqmButtonNavigation = document.querySelectorAll(".mqm-button-navigation")
+const mqmButtonValidation = document.querySelector("#mqm-applied-button")
+
+
+const toggleMqmCheckbox = (checkboxId) => {
+    const checkbox = document.querySelector(`#${checkboxId}`)
+    const parent = checkbox.parentNode;
+
+    checkbox.checked = !checkbox.checked;
+    parent.classList.toggle("multi-question-module-element-checked");
+}
+
+const mqmValidation = () => {
+    const mqmCheckboxList = document.querySelectorAll(".mqm-checkbox")
+
+    mqmCheckboxList.forEach(mqmCheckbox => {
+        let filterCheckboxId = mqmCheckbox.id.substring(4)
+        let filterCheckbox = document.querySelector(`#${filterCheckboxId}`);
+
+        filterCheckbox.checked = mqmCheckbox.checked
+
+        if (!filterCheckbox.checked)
+            activeCheckboxFilterList = removeElementFromList(activeCheckboxFilterList, filterCheckboxId)
+
+        toggleDrawerFilterButton(filterCheckbox)
+    })
+
+    mqmButtonNavigation.forEach(button => {
+        button.classList.add("flex-visible")
+    })
+    mqmButtonValidation.classList.add("hidden")
+
+    mqmQuestionArea.classList.add("hidden")
+
+    mqmCompleted.classList.add("flex-visible")
+}
+
+const mqmReset = () => {
+    const mqmCheckboxList = document.querySelectorAll(".mqm-checkbox")
+    let parent;
+
+    mqmCheckboxList.forEach(mqmCheckbox => {
+        mqmCheckbox.checked = false;
+
+        parent = mqmCheckbox.parentNode;
+        parent.classList.remove("multi-question-module-element-checked");
+    })
+    mqmButtonNavigation.forEach(button => {
+        button.classList.remove("flex-visible")
+    })
+    mqmButtonValidation.classList.remove("hidden")
+
+    mqmQuestionArea.classList.remove("hidden")
+
+    mqmCompleted.classList.remove("flex-visible")
+
+    resetFilter();
+}
+
+const mqmBack = () => {
+    mqmButtonNavigation.forEach(button => {
+        button.classList.remove("flex-visible")
+    })
+    mqmButtonValidation.classList.remove("hidden")
+
+    mqmQuestionArea.classList.remove("hidden")
+
+    mqmCompleted.classList.remove("flex-visible")
 }
 
 //----------------------------------------------------------------------------------------------------------------------//
@@ -166,7 +252,7 @@ const createFilterTagListElement = (checkbox) => {
     button.id = `button-${checkbox}`;
     button.className = 'filter-tag-button';
     button.innerText = 'X';
-    button.onclick = function() {
+    button.onclick = function () {
         deleteTag(this);
     };
 
@@ -255,6 +341,51 @@ const hideFilterDrawer = () => {
 }
 
 //----------------------------------------------------------------------------------------------------------------------//
+//                      Function to change page
+
+const pageSelector = document.querySelector(".page-selector")
+const pageSelectorLength = pageSelector.length;
+const previousButton = document.querySelector(".previous");
+const nextButton = document.querySelector(".next");
+
+const changePage = () => {
+    const actualPage = + pageSelector.value;
+    const productPageOne = document.querySelector(".one")
+    const productPageTwo = document.querySelector(".two")
+    if (actualPage === 2) {
+        productPageTwo.classList.add("hidden")
+        productPageTwo.classList.add("flex-visible")
+    }
+    if (actualPage === 1) {
+        previousButton.classList.add("page-navigator-off")
+        productPageOne.classList.remove("hidden")
+        productPageTwo.classList.remove("flex-visible")
+    } else
+        previousButton.classList.remove("page-navigator-off")
+
+    if (actualPage === + pageSelectorLength) {
+        productPageOne.classList.add("hidden")
+        productPageTwo.classList.add("flex-visible")
+        nextButton.classList.add("page-navigator-off")
+    } else
+        nextButton.classList.remove("page-navigator-off")
+
+}
+
+const previousPage = () => {
+    if (pageSelector.value > 1)
+        pageSelector.value --;
+    changePage()
+}
+
+const nextPage = () => {
+    if (pageSelector.value < pageSelectorLength)
+        pageSelector.value ++;
+    changePage();
+}
+
+
+//----------------------------------------------------------------------------------------------------------------------//
 //                     Function to remove element from list
 
 const removeElementFromList = (list, element) => {
@@ -270,23 +401,11 @@ const displayAllProduct = () => {
     })
 }
 
-const hideAllProduct = () => {
-    allProduct.forEach(element => {
-        element.classList.remove("display-product");
-    })
-}
-
 //----------------------------------------------------------------------------------------------------------------------//
 //                     Functions pour ajouter/enlever une classe à tout les éléments d'une liste
 
 const removeClassFromListElements = (list, className) => {
     list.forEach(element => {
         element.classList.remove(className);
-    })
-}
-
-const addClassFromListElements = (list, className) => {
-    list.forEach(element => {
-        element.classList.add(className);
     })
 }

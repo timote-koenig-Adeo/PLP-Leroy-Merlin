@@ -17,7 +17,7 @@
                         <div class="hour-drawer-header-text">
                             Mon Magasin
                         </div>
-                        <button onclick="toggleDisplayHourDrawer()">
+                        <button class="pointer-cursor" onclick="toggleDisplayHourDrawer()">
                             X
                         </button>
                     </div>
@@ -73,10 +73,11 @@
             <div class="header-components">
                 <div class="top-left-header">
                     <a class="header-logo-container" href="index.html">
-                        <img id="logo-leroy-merlin" src="img/Leroy-Merlin-Logo.png" alt="logo leroy merlin">
+                        <img id="logo-leroy-merlin" class="pointer-cursor" src="img/Leroy-Merlin-Logo.png"
+                             alt="logo leroy merlin">
                     </a>
-                    <button class="header-our-shop" onclick="toggleDisplayHourDrawer()">
-                        <img src="img/shop-solid.svg" width="30px">
+                    <button class="header-our-shop pointer-cursor" onclick="toggleDisplayHourDrawer()">
+                        <img src="img/shop-solid.svg" alt="shop symbol" width="30px">
                         <strong>Villneuve-d'Ascq - Lille</strong>
                     </button>
                 </div>
@@ -88,7 +89,7 @@
                     </ul>
                 </div>
                 <div id="logo-container">
-                    <a class="logo-content" href="https://www.leroymerlin.fr/" target="_blank">
+                    <a class="logo-content pointer-cursor" href="https://www.leroymerlin.fr/" target="_blank">
                         <div class="logo-picture">
                             <img id="help-logo" src="./img/circle-info-solid.svg" alt="help logo">
                         </div>
@@ -96,7 +97,7 @@
                             Aide et Contact
                         </div>
                     </a>
-                    <a class="logo-content" href="connect.html">
+                    <a class="logo-content pointer-cursor" href="connect.html">
                         <div class="logo-picture">
                             <img id="user-logo" src="./img/user.svg" alt="user logo">
                         </div>
@@ -104,7 +105,7 @@
                             Me connecter
                         </div>
                     </a>
-                    <a class="logo-content" href="https://www.leroymerlin.fr/" target="_blank">
+                    <a class="logo-content pointer-cursor" href="https://www.leroymerlin.fr/" target="_blank">
                         <div class="logo-picture">
                             <img id="shop-logo" src="./img/cart-shopping-solid.svg" alt="shop logo">
                         </div>
@@ -118,28 +119,30 @@
         <div class="header-navigation">
             <div class="header-navigation-content-left">
                 <ul class="navigation-list">
-                    <li data-menu-id="produits">Produits</li>
-                    <li data-menu-id="service">Pose et service</li>
-                    <li data-menu-id="tuto">Cours et tutos</li>
-                    <li data-menu-id="outils">Outils de conception</li>
+                    <li class="pointer-cursor" data-menu-id="produits">Produits</li>
+                    <li class="pointer-cursor" data-menu-id="service">Pose et service</li>
+                    <li class="pointer-cursor" data-menu-id="tuto">Cours et tutos</li>
+                    <li class="pointer-cursor" data-menu-id="outils">Outils de conception</li>
                 </ul>
             </div>
             <div class="header-navigation-content-right">
-
+                <a class="pointer-cursor" href="https://www.leroymerlin.fr" target="_blank">
+                    Bonnes affaires
+                </a>
             </div>
         </div>
         <div id="produits" class="burger-menu">
             <div class="burger-menu-content">
                 <div class="categories">
                     <ul class="categories-list">
-                        <li data-menu-id="terasse" class="categories-element">
-                            <img class="categories-element-picture" src="img/product/tondeuse.jpg">
+                        <li data-menu-id="terasse" class="categories-element pointer-cursor">
+                            <img class="categories-element-picture" src="img/product/tondeuse.jpg" alt="tondeuse picture">
                             <div class="categories-element-content">
                                 Terasse et jardin
                             </div>
                         </li>
-                        <li data-menu-id="outillage" class="categories-element">
-                            <img class="categories-element-picture" src="img/product/perceuse.png">
+                        <li data-menu-id="outillage" class="categories-element pointer-cursor">
+                            <img class="categories-element-picture" src="img/product/perceuse.png" alt="perceuse picture">
                             <div class="categories-element-content">
                                 Outillage
                             </div>
@@ -155,11 +158,11 @@
                         <div class="navigation-filter">
                             <div class="navigation-specific-filter">
                                 <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                                     width="20px">
+                                                                                     alt="euro symbol" width="20px">
                                     <div class="navigation-specific-filter-content">Les petits prix jardin</div>
                                 </a>
                                 <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                                     width="20px">
+                                                                                     alt="euro symbol" width="20px">
                                     <div class="navigation-specific-filter-content">Spécial jardin: Aménager, profiter
                                         et jardiner
                                     </div>
@@ -192,19 +195,19 @@
                         <div class="navigation-filter">
                             <div class="navigation-specific-filter">
                                 <a class="navigation-specific-filter-container"><img src="img/toolbox-solid.svg"
-                                                                                     width="20px">
+                                                                                     alt="toolbox symbol" width="20px">
                                     <div class="navigation-specific-filter-content">Prêt à bricoler avec DEXTER</div>
                                 </a>
                                 <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                                     width="20px">
+                                                                                     alt="euro symbol" width="20px">
                                     <div class="navigation-specific-filter-content">Les bons plans Outillage</div>
                                 </a>
                                 <a class="navigation-specific-filter-container"><img src="img/toolbox-solid.svg"
-                                                                                     width="20px">
+                                                                                     alt="toolbox symbol" width="20px">
                                     <div class="navigation-specific-filter-content">Loaction de matériel</div>
                                 </a>
                                 <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                                     width="20px">
+                                                                                     alt="euro symbol" width="20px">
                                     <div class="navigation-specific-filter-content">Nos produits reconditionnés</div>
                                 </a>
                             </div>
@@ -240,11 +243,11 @@
                 <div class="navigation-filter">
                     <div class="navigation-specific-filter">
                         <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                             width="20px">
+                                                                             alt="euro symbol" width="20px">
                             <div class="navigation-specific-filter-content">Rénovation complète</div>
                         </a>
                         <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                             width="20px">
+                                                                             alt="euro symbol" width="20px">
                             <div class="navigation-specific-filter-content">Nos offres de rénovation</div>
                         </a>
                     </div>
@@ -277,11 +280,11 @@
                 <div class="navigation-filter">
                     <div class="navigation-specific-filter">
                         <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                             width="20px">
+                                                                             alt="euro symbol" width="20px">
                             <div class="navigation-specific-filter-content">Conseils pratiques</div>
                         </a>
                         <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                             width="20px">
+                                                                             alt="euro symbol" width="20px">
                             <div class="navigation-specific-filter-content">Coaching à domicile</div>
                         </a>
                     </div>
@@ -314,15 +317,15 @@
                 <div class="navigation-filter">
                     <div class="navigation-specific-filter">
                         <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                             width="20px">
+                                                                             alt="euro symbol" width="20px">
                             <div class="navigation-specific-filter-content">Mon budget cuisine</div>
                         </a>
                         <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                             width="20px">
+                                                                             alt="euro symbol" width="20px">
                             <div class="navigation-specific-filter-content">Mon budget rangement</div>
                         </a>
                         <a class="navigation-specific-filter-container"><img src="img/euro-sign-solid.svg"
-                                                                             width="20px">
+                                                                             alt="euro symbol" width="20px">
                             <div class="navigation-specific-filter-content">Ma cuisine 3D</div>
                         </a>
                     </div>
@@ -375,15 +378,15 @@
                 </div>
                 <div class="connection-old-user">
                     <button class="facebook-button extern-login-button">
-                        <img src="img/facebook.png" width="30px">
+                        <img src="img/facebook.png" alt="facebook logo" width="30px">
                         Se connecter sur Facebook
                     </button>
                     <button class="google-button extern-login-button">
-                        <img src="img/google.png" width="30px">
+                        <img src="img/google.png" alt="google logo" width="30px">
                         Se connecter sur Google
                     </button>
                     <button class="apple-button extern-login-button">
-                        <img src="img/apple.png" width="30px">
+                        <img src="img/apple.png" alt="apple logo" width="30px">
                         Se connecter sur Apple
                     </button>
                 </div>

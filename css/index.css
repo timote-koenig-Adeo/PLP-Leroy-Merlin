@@ -10,13 +10,183 @@
 
 /*  Product Area    */
 
-.product-list {
+.one {
     display: flex;
+}
+
+.two {
+    display: none;
+}
+
+.product-list {
     justify-content: space-evenly;
     align-items: center;
     padding: 0;
     flex-wrap: wrap;
     width: 100%;
+}
+
+/*  Pills   */
+
+.pills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    background-color: #ebf5de;
+    width: 100%;
+    height: 100px;
+    margin: 0 0 10px 0;
+}
+
+.pill-list {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 98%;
+    height: 80%;
+    padding: 0;
+    gap: 10px;
+}
+
+.pill-case {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    width: 100px;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 8px;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+.pill-case:hover {
+    text-decoration: underline;
+}
+
+/*  MQM */
+
+.multi-question-module {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    background-color: #ebf5de;
+    border-radius: 16px;
+}
+
+/*  mqm question area */
+
+.mqm-question-area {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+}
+
+.mqm-question-area h4{
+    padding: 20px 0 0 40px;
+    margin: 0;
+}
+
+.multi-question-module-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: fit-content;
+    gap: 50px;
+}
+
+.multi-question-module-list * {
+    cursor: pointer;
+}
+
+.multi-question-module-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: white;
+    position: relative;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.multi-question-module-element-checked {
+    background-color: darkseagreen;
+}
+
+.multi-question-module-element div{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+.multi-question-module-element input {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    accent-color: forestgreen;
+}
+
+/*  mqm completed */
+
+.mqm-completed {
+    display: none;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+}
+
+.mqm-completed h4{
+    padding: 20px 0 0 40px;
+    margin: 0;
+}
+
+.mqm-completed-text-area {
+    height: fit-content;
+    margin: auto;
+    padding: 1rem;
+    border: 1px solid black;
+    background-color: white;
+}
+
+/*  mqm button area */
+
+.multi-question-module-button {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin: 10px;
+}
+
+.multi-question-module-button > * {
+    cursor: pointer;
+}
+
+#mqm-applied-button {
+    margin: auto;
+}
+
+.mqm-button-navigation {
+    display: none;
+}
+
+.mqm-button-navigation:hover {
+    text-decoration: underline;
 }
 
 /*  Product   */
@@ -257,6 +427,38 @@ body:after {
 
 body.overlay-visible:after {
     display: block !important;
+}
+
+/*  Page selector   */
+
+.page-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    gap: 16px;
+}
+
+.page-selector {
+    width: 100px;
+    height: 42px;
+    border-radius: 8px;
+}
+
+.page-navigator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background-color: black;
+    border: 0;
+    border-radius: 8px;
+    width: 42px;
+    height: 42px;
+}
+
+.page-navigator-off {
+    opacity: 50%;
 }
 
 /*  A trier   */
